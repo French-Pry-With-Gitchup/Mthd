@@ -1,6 +1,4 @@
 class User < ApplicationRecord 
-    include ActiveModel::Validations
-
     has_many :categories
     has_many :snippets
 
@@ -10,7 +8,4 @@ class User < ApplicationRecord
 
     # Validates User Name and Password
     validates_with NameValidator, PasswordValidator, on: :create
-
 end
-
-
