@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-     
     # Controls Views for new
     def new
         @user = User.new
