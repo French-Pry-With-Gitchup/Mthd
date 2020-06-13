@@ -7,7 +7,7 @@ class NameValidator < ActiveModel::Validator
     end
 
     def text_character_check(name)
-        if name =~ /^[A-Za-z0-9_\.]+$/		 				   # Do Checks for Amount of characters in String	| Min: 4
+        if name =~ /^[A-Za-z0-9_\.]+$/		 				    # Do Checks for Amount of characters in String	| Min: 4
             true
         else
             false
