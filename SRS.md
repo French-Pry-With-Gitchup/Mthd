@@ -9,3 +9,8 @@
 3. rails g snippet title:string code:text user_id:integer is_private:boolean
 
 ## Making the User and Password Auth System
+
+1. Developing the User CRU System
+
+    * Making the Show/New/Index | .html.erb pages
+    * Inside our UserController making [Index, Show, New, Create]
