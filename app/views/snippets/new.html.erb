@@ -1,0 +1,9 @@
+<h1>Create a new snippet</h1>
+<%= form_for @snippet do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :code %>
+  <%# how do you make it not expand? %>
+  <%= f.text_area :code %>
+  <%= f.submit %>
+<% end %>

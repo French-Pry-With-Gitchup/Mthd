@@ -13,6 +13,13 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = 
+    @snippet = Snippet.create(snippet_params)
+    redirect_to @snippet
+  end
+
+  private
+
+  def snippet_params
+    params.require(:snippet).permit(:title, :code, :is_private)
   end
 end
