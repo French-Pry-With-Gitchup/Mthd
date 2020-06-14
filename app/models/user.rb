@@ -1,4 +1,4 @@
-class User < ApplicationRecord 
+class User < ApplicationRecord
     # include ActiveModel::Validations
 
     has_many :categories

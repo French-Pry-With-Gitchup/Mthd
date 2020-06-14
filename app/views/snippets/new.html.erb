@@ -1,9 +1,15 @@
-<h1>Create a new snippet</h1>
-<%= form_for @snippet do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :code %>
-  <%# how do you make it not expand? %>
-  <%= f.text_area :code %>
-  <%= f.submit %>
-<% end %>
+  <h1>Create a new snippet</h1>
+<div id="snippetContainer">
+  <%= form_for @snippet do |f| %>
+    <%= f.text_field :title, placeholder: 'Add your title here' %>
+    <div id="wpContainer">
+      <!-- do we make these divs with an anchor? or keep them as buttons? -->
+      <!-- will be triggered to toggle the write/preview -->
+      <div class="wpBtn">Write</div>
+      <div class="wpBtn">Preview</div>
+    </div>
+    <%= f.text_area :code, placeholder: 'Add your notes here' %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
