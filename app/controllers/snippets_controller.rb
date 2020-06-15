@@ -13,8 +13,8 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = Snippet.new(snippet_params)
-    @snippet.save
+    @snippet = Snippet.create(snippet_params)
+    # @snippet.save
   end
 
   private
