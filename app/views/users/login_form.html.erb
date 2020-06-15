@@ -1,0 +1,16 @@
+<h1> Login BOIIZ </h1>
+
+<%= form_tag "/user/login", method: "POST" do %>
+    <%= label_tag  :name %>
+    <%= text_field_tag :name %>
+    <%= label_tag  :password %>
+    <%= password_field_tag :password %>
+    
+    <%= submit_tag "Log In"%>
+<% end %>
+
+
+
+<% if flash[:errors] %>
+    <p style ="color: red"><%= flash[:errors]%></p>
+<% end %>
