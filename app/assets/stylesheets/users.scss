@@ -1,3 +1,86 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#signupContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f2;
+}
+
+#signup {
+  width: 50vw;
+  height: fit-content;
+  margin: 0 auto;
+  transform: translate(0, 30vh);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#formSize {
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.formHeader {
+  text-transform: uppercase;
+}
+
+.floatingLabel, .lineInput {
+  transition: all 0.2s;
+}
+
+.lineInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(32, 29, 32, 0.5);
+  margin: 15px 0;
+  padding: 5px;
+}
+
+.lineInput:focus {
+  outline: none;
+  border-bottom: 2px solid rgba(32, 29, 32, 1);
+}
+
+.lineInput::placeholder {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+// add input on focus here, make that the full opacity
+// also animation of bottom border expanding!!! o dear this so cool
+
+.codeGraphic {
+  width: 50vw;
+  background-color: #201D20;
+  background-image: url('code-snippet.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#signUpBtn {
+  background-color: #A6E22E;
+  color: #201D20;
+  border: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 60px;
+  margin: 2vh 0;
+  line-height: 60px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+  box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+}
+
+#signUpBtn:hover {
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+  -moz-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+  box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+}
