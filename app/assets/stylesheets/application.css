@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+  font-family: "Coolvetica Regular";
+  src: url('coolvetica-rg.ttf');
+ }
+
+ @font-face {
+  font-family: "Coolvetica Condensed";
+  src: url('coolvetica-condensed-rg.ttf');
+ }
+
+body {
+  background-color: #f8f8f2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Coolvetica Regular";
+  text-align: center;
+  color: #3e3d32;
+}
+
+.logo {
+  height: 100px;
+  width: 300px;
+  margin: 0 auto;
+  background-image: url('logo.svg');
+  background-size: cover;
+}
