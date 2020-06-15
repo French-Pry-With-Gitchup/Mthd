@@ -6,7 +6,7 @@
     <div id="formSize">
       <%= form_for(@user) do |f| %>
         <%= f.text_field :name, class: 'lineInput', placeholder: 'Name'%>
-        <%= f.text_field :password, class: 'lineInput', placeholder: 'Password'%>
+        <%= f.password_field :password, class: 'lineInput', placeholder: 'Password'%>
         <%= f.submit "Sign Up", id: 'signUpBtn'%>
       <% end %>
 

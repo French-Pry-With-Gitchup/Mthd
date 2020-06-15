@@ -1,0 +1,11 @@
+      <%= form_for(@user) do |f| %>
+        <%= f.text_field :name, class: 'lineInput', placeholder: 'Name'%>
+        <%= f.text_field :password, class: 'lineInput', placeholder: 'Password'%>
+        <%= f.submit "Log In", id: 'signUpBtn'%>
+      <% end %>
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p style ="color: red"><%= error %></p>
+        <% end %>
+      <% end %>

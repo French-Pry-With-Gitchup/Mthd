@@ -14,7 +14,15 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = Snippet.create(snippet_params)
-    # @snippet.save
+    @snippet.save
+
+    if @snippet.valid?                                
+      redirect_to snippet_path(@snippet.id)              
+
+    else
+      flash[:errors] = @snippet.errors.full_messages    
+      redirect_to new_snippet_path(@snippet)               
+    end
   end
 
   private
