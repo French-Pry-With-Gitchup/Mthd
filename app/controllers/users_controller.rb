@@ -36,6 +36,8 @@ class UsersController < ApplicationController
 end
 
 
+
+
 ########## UPDATE / EDIT CRUD FUNCTIONALITY ##########
     # Controls Views for edit
     # def edit
