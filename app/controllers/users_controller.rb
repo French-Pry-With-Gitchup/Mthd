@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
     def handle_login
         # byebug
-        @user = User.find_by(name: params[:username])
+        @user = User.find_by(name: params[:name])
         if @user && @user.authenticate(params[:password])
             redirect_to @user
         else
-            redirect_to users_login_path
+            flash[:errors] = "Wrong Username/Password"
+            redirect_to user_login_path
         end
     end
 
@@ -33,20 +34,20 @@ class UsersController < ApplicationController
 
     # Shows the given user found by the table ID
     def show
-        @user = User.find(user_params)
-    end
-
-    # Controls Views for edit
-    def edit
-    end
-    
-    # Controls the table update logic
-    def update
         user_find
-        user_find.update(user_params)
-
-        redirect_to user_path(@user)
     end
+
+    # # Controls Views for edit
+    # def edit
+    # end
+    
+    # # Controls the table update logic
+    # def update
+    #     user_find
+    #     user_find.update(user_params)
+
+    #     redirect_to user_path(@user)
+    # end
 
     private
 
