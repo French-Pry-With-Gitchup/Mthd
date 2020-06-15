@@ -1,15 +1,21 @@
-<h1>Create a new snippet</h1>
 <div id="snippetContainer">
-  <%= form_for @snippet do |f| %>
-    <%= f.text_field :title, placeholder: 'Add your title here' %>
-    <div id="wpContainer">
-      <!-- do we make these divs with an anchor? or keep them as buttons? -->
-      <!-- will be triggered to toggle the write/preview -->
-      <div class="wpBtn">Write</div>
-      <div class="wpBtn">Preview</div>
+  <nav></nav>
+  <div id="snippetFormWrapper">
+    <%# do we add a logo here? %>
+    <div id="upper">
+    <%= form_for @snippet do |f| %>
+      <%= f.text_field :title, placeholder: 'Add your title here', class:'snippetInput', id:'snippetTitle' %>
+      <div id="wpContainer">
+        <!-- do we make these divs with an anchor? or keep them as buttons? -->
+        <!-- will be triggered to toggle the write/preview -->
+        <div class="wpBtn">Write</div>
+        <div class="wpBtn">Preview</div>
+      </div>
     </div>
-    <%= f.text_area :code, placeholder: 'Add your notes here' %>
-    <%= f.submit %>
-  <% end %>
-
+    <div id="lower">
+        <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput', id:'snippetTextArea' %>
+        <%= f.submit 'Submit', id:'snippetSubmitBtn' %>
+      <% end %>
+    </div>
+  </div>
 </div>

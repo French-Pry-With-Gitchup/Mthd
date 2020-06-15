@@ -2,11 +2,91 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: https://sass-lang.com/
 // // style for new
-//
-// body {
-//   background-color: #323234;
-// }
-//
+
+#snippetContainer {
+  background-color: #272822;
+  height: 100vh;
+  width: 100vw;
+}
+
+#snippetFormWrapper {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+#snippetSubmitBtn {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #201D20;
+  border: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #66d9ef;
+}
+
+#upper {
+  width: 85%;
+  margin: 0 auto;
+  position: relative;
+  top: 4vh;
+}
+
+#lower {
+  margin: 0 auto;
+  padding-top: 7vh;
+  background-color: #3e3d32;
+}
+
+#wpContainer {
+  display: flex;
+}
+
+.wpBtn {
+  background-color: #a6e22e;
+  color: #000;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  width: 50%;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.snippetInput {
+  border: none;
+}
+
+#snippetTitle {
+  font-family: "Coolvetica Regular";
+  background-color: transparent;
+  color: #f92672;
+  padding: 5px;
+  border-bottom: 3px solid #f92672;
+  height: 60px;
+  font-size: 25px;
+}
+
+#snippetTitle::placeholder {
+  color: #f92672;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+#snippetTextArea {
+  width: 100%;
+  height: 55vh;
+  background-color: transparent;
+  padding: 2em;
+  color: #fff;
+}
+
+.snippetInput:focus {
+  outline: none;
+}
+
 // h1 {
 //   color: #fff;
 //   text-align: center;
@@ -25,18 +105,6 @@
 //
 // }
 //
-// #wpContainer {
-//   display: flex;
-// }
-//
-// .wpBtn {
-//   background-color: #2176FF;
-//   color: #fff;
-//   height: 50px;
-//   line-height: 50px;
-//   text-align: center;
-//   width: 50%;
-// }
 //
 // form {
 //   // border: 1px solid blue;
