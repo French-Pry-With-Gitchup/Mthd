@@ -3,13 +3,13 @@ class UsersController < ApplicationController
     def login_form
     end
 
-    def handle_login                                            #
-        @user = User.find_by(name: params[:name])               #
-        if @user && @user.authenticate(params[:password])       #
-            redirect_to @user                                   #
+    def handle_login                                        #
+        @user = User.find_by(name: params[:name])           #
+        if @user && @user.authenticate(params[:password])   #
+            redirect_to @user                               #
         else                                                    
-            flash[:errors] = "Wrong Username/Password"          #
-            redirect_to user_login_path                         #
+            flash[:errors] = "Wrong Username/Password"      #
+            redirect_to user_login_path                     #
         end
     end
 
@@ -36,17 +36,17 @@ class UsersController < ApplicationController
         user_find
     end
 
-    # # Controls Views for edit
-    # def edit
-    # end
+    # Controls Views for edit
+    def edit
+    end
     
-    # # Controls the table update logic
-    # def update
-    #     user_find
-    #     user_find.update(user_params)
+    # Controls the table update logic
+    def update
+        user_find
+        user_find.update(user_params)
 
-    #     redirect_to user_path(@user)
-    # end
+        redirect_to user_path(@user)
+    end
 
     private
 
