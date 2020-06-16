@@ -3,14 +3,13 @@ class UsersController < ApplicationController
     def login_form
     end
 
-    def handle_login
-        # byebug
-        @user = User.find_by(name: params[:name])
-        if @user && @user.authenticate(params[:password])
-            redirect_to @user
-        else
-            flash[:errors] = "Wrong Username/Password"
-            redirect_to user_login_path
+    def handle_login                                            #
+        @user = User.find_by(name: params[:name])               #
+        if @user && @user.authenticate(params[:password])       #
+            redirect_to @user                                   #
+        else                                                    
+            flash[:errors] = "Wrong Username/Password"          #
+            redirect_to user_login_path                         #
         end
     end
 
