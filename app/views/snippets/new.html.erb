@@ -18,10 +18,12 @@
       <% end %>
     </div>
 
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error| %>
-          <p style ="color: red"><%= error %></p>
-        <% end %>
+    
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p style ="color: red"><%= error %></p>
       <% end %>
+    <% end %>
   </div>
 </div>

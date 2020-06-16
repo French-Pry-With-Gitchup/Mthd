@@ -5,10 +5,18 @@
 
 <!-- If user is not logged in forces login else displays Logout button -->
 <% if logged_in? %>
-    Welcome, <%= logged_in_user.name %>
+    <p>Welcome, <%= logged_in_user.name %> </p>
     <%= button_to "Log out", "/user/logout" %>
 <% else %>
-    <%= link_to "Log In", user_login_path %>
+    <%= button_to "Log In", user_login_path %>
+<% end %>
+
+<!-- Handles User Category Creation -->
+
+
+<!-- Handles User Snippet Creation --> 
+<% if logged_in? %>
+    <%= button_to "New Snippets", snippet_new_path %>
 <% end %>
 
 <!-- Handles User Edit/Delete -->
@@ -16,4 +24,35 @@
     <%= button_to "Edit Profile", edit_user_path(@user), method: :get%>
 
     <%= button_to "Delete Account", @user, method: :delete %>
+<% end %>
+
+<!-- Handle Current User Category Display -->
+<br><br> <h2> Category </h2>
+<% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
+    <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
+        <%= "This User does not have any Categories" %>
+    <% else %>
+        <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
+            <% if c.user_id == @user.id %>
+                <%= c.name %>        <br>
+                <%= c.language %>    <br>
+                <%= c.description %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>
+
+<!-- Handle Current User Snippet Display -->
+<br><br><h2> Snippet </h2>
+<% if logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
+    <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
+        <%= "This User does not have any Snippets" %>
+    <% else %>
+        <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
+            <% if s.user_id == @user.id %>
+                <%= s.title %>  <br>
+                <%= s.code %>   <br>
+            <% end %>
+        <% end %>
+    <% end %>
 <% end %>
