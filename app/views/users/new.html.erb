@@ -1,15 +1,15 @@
-<div id="signupContainer">
-  <section id="signup">
+<div class="signupContainer">
+  <section class="userForm">
     <div class="logo"></div>
     <h1 class="formHeader">Create An Account</h1>
     <!-- try to center this! also get ur fonts! -->
-    <div id="formSize">
+    <div class="formSize">
       <%= form_for(@user) do |f| %>
-        <%= f.text_field :name, class: 'lineInput', placeholder: 'Name'%>
+        <%= f.text_field :name, class:'lineInput', placeholder:'Name' %>
         <%= f.password_field :password, class: 'lineInput', placeholder: 'Password'%>
-        <%= f.submit "Sign Up", id: 'signUpBtn'%>
+        <%= f.submit "Sign Up", class: 'userBtn'%>
       <% end %>
-
+      <p class="userRedirectPrompt">Already have an account? <%= link_to "Login.", user_login_path %></p>
       <% if flash[:errors] %>
         <% flash[:errors].each do |error| %>
           <p style ="color: red"><%= error %></p>

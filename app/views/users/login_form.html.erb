@@ -1,16 +1,18 @@
-<h1> Login BOIIZ </h1>
-
-<%= form_tag "/user/login", method: "POST" do %>
-    <%= label_tag  :name %>
-    <%= text_field_tag :name %>
-    <%= label_tag  :password %>
-    <%= password_field_tag :password %>
-    
-    <%= submit_tag "Log In"%>
-<% end %>
-
-
-
-<% if flash[:errors] %>
-    <p style ="color: red"><%= flash[:errors]%></p>
-<% end %>
+<div class="signupContainer">
+  <section class="userForm">
+    <div class="logo"></div>
+    <h1 class="formHeader">Login</h1>
+    <div class="formSize">
+      <%= form_tag "/user/login", method: "POST" do %>
+          <%= text_field_tag :name, "", class: 'lineInput', placeholder: 'Name'%>
+          <%= password_field_tag :password, "", class:'lineInput', placeholder:'Password'%>
+          <%= submit_tag "Log In", class:'userBtn'%>
+      <% end %>
+      <p class="userRedirectPrompt">New here? <%= link_to "Signup.", sign_up_path %></p>
+      <% if flash[:errors] %>
+          <p style ="color: red"><%= flash[:errors]%></p>
+      <% end %>
+    </div>
+  </section>
+  <section class="codeGraphic"></section>
+</div>

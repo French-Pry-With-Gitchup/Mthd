@@ -1,7 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-#signupContainer {
+.signupContainer {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -9,7 +9,7 @@
   background-color: #f8f8f2;
 }
 
-#signup {
+.userForm {
   width: 50vw;
   height: fit-content;
   margin: 0 auto;
@@ -21,7 +21,7 @@ form {
   flex-direction: column;
 }
 
-#formSize {
+.formSize {
   width: 30vw;
   margin: 0 auto;
 }
@@ -63,7 +63,7 @@ form {
   background-size: cover;
 }
 
-#signUpBtn {
+.userBtn {
   background-color: #A6E22E;
   color: #201D20;
   border: 0;
@@ -76,6 +76,18 @@ form {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
   -moz-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
   box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+}
+
+.userRedirectPrompt {
+  color: #F92672;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #signUpBtn:hover {
