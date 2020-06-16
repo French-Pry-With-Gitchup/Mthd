@@ -50,8 +50,10 @@
     <% else %>
         <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
             <% if s.user_id == @user.id %>
-                <%= s.title %>  <br>
-                <%= s.code %>   <br>
+                <p> Title: </p>
+                <%= link_to "#{s.title}", snippet_path(s.id) %> <br>
+                <p> Code: </p> 
+                <%= s.code %> <br><br>
             <% end %>
         <% end %>
     <% end %>

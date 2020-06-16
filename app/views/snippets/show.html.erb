@@ -1,2 +1,4 @@
 <h1><%= @snippet.title %></h1>
 <p><%= markdown(@snippet.code) %></p>  
+
+<%= button_to "User Dashboard", user_path(logged_in_user.id) %>
