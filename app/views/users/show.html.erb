@@ -1,0 +1,10 @@
+    <h2>
+      <%= @user.name %>'s Profile
+    </h2>
+    <br><br>
+
+    <% if logged_in? && logged_in_user.id == @user.id %>
+      <%= button_to "Edit Profile", edit_user_path(@user), method: :get%>
+
+      <%= button_to "Delete Account", @user, method: :delete %>
+    <% end %>
