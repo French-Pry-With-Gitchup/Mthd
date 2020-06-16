@@ -1,16 +1,8 @@
 class UsersController < ApplicationController
+    before_action :user_find, only: [:show, :edit, :update, :destroy]
 
-    def login_form
-    end
-
-    def handle_login                                        #
-        @user = User.find_by(name: params[:name])           #
-        if @user && @user.authenticate(params[:password])   #
-            redirect_to @user                               #
-        else                                                    
-            flash[:errors] = "Wrong Username/Password"      #
-            redirect_to user_login_path                     #
-        end
+    # Shows the given user found by the table ID
+    def show
     end
 
     # Controls Views for new
@@ -31,49 +23,41 @@ class UsersController < ApplicationController
         end
     end
 
-    # Shows the given user found by the table ID
-    def show
-        user_find
-    end
-
     # Controls Views for edit
     def edit
     end
     
     # Controls the table update logic
     def update
-        user_find
-        user_find.update(user_params)
+        @user.update(user_params)                           #   Updates the users settings with Validated incoming Parameters
+        redirect_to user_path(@user)                        #   Redirects to the User page
+    end
 
-        redirect_to user_path(@user)
+    # Handles 
+
+    # Entry point for login View page
+    def login_form
+    end
+
+    # Handles incoming data from Login form
+    def handle_login                                        
+        @user = User.find_by(name: params[:name])           #
+        if @user && @user.authenticate(params[:password])   #   IF the user exists and if the User password Authenticates properly, then user "signs in"
+            redirect_to @user                               #   Redirects to user page
+        else                                                    
+            flash[:errors] = "Wrong Username/Password"      #   Throws error on incorrect username/password validation
+            redirect_to user_login_path                     #   Redirects to login page
+        end
     end
 
     private
 
     def user_find
-        @user = User.find(params[:id])                      # Searches for the User by their ID on the table
+        @user = User.find(params[:id])                      #   Searches for the User by their ID on the table
     end
 
     def user_params
-        params.require(:user).permit(:name, :password)      # Does Proper Validation Check for User Parameters
+        params.require(:user).permit(:name, :password)      #   Does Proper Validation Check for User Parameters
     end
 
 end
-
-
-
-
-########## UPDATE / EDIT CRUD FUNCTIONALITY ##########
-    # Controls Views for edit
-    # def edit
-    #     @user = User.find(params[:id])
-    # end
-    
-    # Controls the table update logic
-    # def update
-    #     @user = User.find(params[:id])
-    #     @user.update(user_params)
-
-    #     redirect_to user_path(@user)
-    # end
-########## UPDATE / EDIT CRUD FUNCTIONALITY ##########

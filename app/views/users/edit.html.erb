@@ -1,0 +1,23 @@
+<div id="signupContainer">
+    <section id="signup">
+        <div class="logo"></div>
+        <h1 class="formHeader">Edit your Account</h1>
+        <!-- try to center this! also get ur fonts! -->
+        <div id="formSize">
+            <%= form_for(@user) do |f| %>
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'lineInput', placeholder: 'Name'%>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'lineInput', placeholder: 'Password'%>
+                <%= f.submit "Edit", id: 'signUpBtn'%>
+            <% end %>
+
+            <% if flash[:errors] %>
+                <% flash[:errors].each do |error| %>
+                    <p style ="color: red"><%= error %></p>
+                <% end %>
+            <% end %>
+        </div>
+    </section>
+    <section class="codeGraphic"></section>
+</div>
