@@ -98,7 +98,8 @@ a {
 }
 
 .userDashboard  {
-  background-color: #3e3d32;
+  // background-color: #3e3d32;
+  background-color: #201D20;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -116,10 +117,10 @@ nav {
 .dashContainer {
   width: 100%;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
-.dashContent {
-}
 .btn {
   background: none;
   outline: none;
@@ -143,9 +144,10 @@ nav {
   background-color: #fd971f;
 }
 
-#showSnippet {
-  background-color: #201D20;
+.dashContent {
+  background-color: #3e3d32;
   width: 90%;
+  border-radius: 5px;
   margin: 0 auto;
   overflow-y: scroll;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
@@ -153,29 +155,72 @@ nav {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
+.headerContainer {
+  // border: 1px solid red;
+  padding: 5px 0;
+  background-color: #ae81ff;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
 .snippetHeader {
   font-family: "Coolvetica Regular";
-  color: #ae81ff;
+  color: #201D20;
+  text-transform: uppercase;
 }
 
 .snippetLink {
-  color: black;
+  color: #201D20;
   background-color: #ae81ff;
-  font-family: Helvetica;
-  height: 12vh;
+  font-family: "Helvetica";
+  height: fit-content;
+  // how do you get them to respond to the length of text, and then by display grid?
   width: 15vw;
-  line-height: 12vh;
+  line-height: 3vh;
   text-align: center;
+  font-size: 1.2em;
+  padding: .75em;
+  // overflow-y: scroll;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  // go for a bolded italic font here!
 }
 
+.snippetLink:hover {
+  transform: scale(1.025);
+  transition: 0.3s ease-in-out;
+  // color: #ae81ff;
+  // background-color: #201D20;
+}
+
+// could've used ids for here, to be dry
 .snippetGrid {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 12vh);
+  grid-template-columns: repeat(4, 12vw);
   justify-items: center;
   justify-content: space-around;
-  grid-row-gap: 5vh;
+  grid-row-gap: 25px;
+  padding: 10vh 0 5vh;
+  justify-content: space-around;
+}
+
+.categoryGrid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 12vh);
+  justify-items: center;
+  justify-content: space-around;
+  grid-row-gap: 3vh;
+  padding: 10vh 0 5vh;
 }
 
 .userEdit {

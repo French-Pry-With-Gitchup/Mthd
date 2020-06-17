@@ -5,22 +5,20 @@
       <h2><%= @user.name %></h2>
     </div>
     <% if logged_in? && logged_in_user.id == @user.id %>
-        <%# set each to be an ID perhaps %>
         <%= link_to edit_user_path(@user), method: :get do %>
           <div class="navLink userEdit">Account Settings</div>
         <% end %>
     <% end %>
 
       <% if logged_in? %>
-          <!-- Handles User Snippet Creation -->
-          <%= link_to snippet_new_path do %>
+          <%= link_to new_snippet_path do %>
             <div class="navLink userSnippets">Create a Snippet</div>
           <% end %>
       <% end %>
 
       <!-- If user is not logged in forces login else displays Logout button -->
       <% if logged_in? %>
-          <%= link_to "/user/logout" do %>
+          <%= link_to user_logout_path do %>
             <div class="navLink userLogin">Logout</div>
           <% end %>
       <% else %>
@@ -28,25 +26,32 @@
       <% end %>
   </nav>
   <div class="dashContainer">
+    <div class="headerContainer">
+      <h1 class="snippetHeader">Categories</h1>
+    </div>
     <section class="dashContent" id="showCategory">
-      <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
-          <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
-              <%= "This User does not have any Categories" %>
-          <% else %>
-              <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
-                  <% if c.user_id == @user.id %>
-                      <%= c.name %>        <br>
-                      <%= c.language %>    <br>
-                      <%= c.description %>
-                  <% end %>
-              <% end %>
-          <% end %>
-      <% end %>
+      <div class="categoryGrid">
+        <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
+            <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
+                <%= "This User does not have any Categories" %>
+            <% else %>
+                <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
+                    <% if c.user_id == @user.id %>
+                        <%= c.name %>        <br>
+                        <%= c.language %>    <br>
+                        <%= c.description %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
+      </div>
     </section>
 
     <!-- Handle Current User Snippet Display -->
-    <div class="dashContent" id="showSnippet">
+    <div class="headerContainer">
       <h1 class="snippetHeader">Snippets</h1>
+    </div>
+    <section class="dashContent" id="showSnippet">
       <div class="snippetGrid">
         <% if logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
             <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
@@ -62,6 +67,6 @@
             <% end %>
         <% end %>
       </div>
-    </div>
+    </section>
   </div>
 </div>

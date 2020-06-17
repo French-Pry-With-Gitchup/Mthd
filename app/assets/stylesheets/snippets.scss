@@ -87,51 +87,58 @@
   outline: none;
 }
 
-// h1 {
-//   color: #fff;
-//   text-align: center;
-//   text-transform: uppercase;
-// }
-//
-// #snippetContainer {
-//   // border: 1px solid red;
-//   border-radius: 20px;
-//   overflow: hidden;
-//   width: 60vw;
-//   margin: 0 auto;
-//   -webkit-box-shadow: 0px 11px 30px 9px rgba(0,0,0,0.75);
-//   -moz-box-shadow: 0px 11px 30px 9px rgba(0,0,0,0.75);
-//   box-shadow: 0px 11px 30px 9px rgba(0,0,0,0.75);
-//
-// }
-//
-//
-// form {
-//   // border: 1px solid blue;
-//   display: flex;
-//   flex-direction: column;
-// }
-//
-// input[type="text" i] {
-//   background-color: #DBD9DB;
-//   border: none;
-//   height: 5vh;
-//   font-size: 20px;
-//   line-height: 20px;
-//   padding: 5px 10px 0;
-// }
-//
-// textarea {
-//   background-color: #DBD9DB;
-//   resize: none;
-//   // get a minimum height in here too
-//   height: 60vh;
-//   padding: 5px 10px 0;
-//   border: none;
-// }
-//
-// input[type="submit" i] {
-//   border: none;
-//   // get a minimum height in here too
-//   height: 7vh;
-// }
+// Snippet Show for each user
+.view__snippetShow {
+  background-color: #272822;
+  height: 100vh;
+  width: 100vw;
+}
+
+.view__snippetContainer {
+  margin: 0 auto;
+  width: 80vw;
+  height: fit-content;
+}
+
+.view__snippetHeaderContainer {
+  width: 85%;
+  height: fit-content;
+  padding: 10px 0;
+  margin: 0 auto;
+  position: relative;
+  text-transform: uppercase;
+  top: 4vh;
+  background-color: #66d9ef;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.view__snippetBody {
+  margin: 0 auto;
+  padding-top: 7vh;
+  background-color: #3e3d32;
+  height: 70vh;
+  padding: 2.5em;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+#snippetEditBtn {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #201D20;
+  border: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #fd971f;
+  text-align: center;
+}
