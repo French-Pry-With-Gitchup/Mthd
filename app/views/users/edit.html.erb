@@ -10,6 +10,7 @@
                 <%= f.label :password %>
                 <%= f.password_field :password, class: 'lineInput', placeholder: 'Password'%>
                 <%= f.submit "Edit", id: 'signUpBtn'%>
+                <%= button_to "Delete Account", @user, method: :delete, class:'btn' %>
             <% end %>
 
             <% if flash[:errors] %>

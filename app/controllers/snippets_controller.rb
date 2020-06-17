@@ -1,7 +1,10 @@
 class SnippetsController < ApplicationController
+  before_action :check_to_see_if_someones_logged_in
+  
   def index
     # flash error here
-    @snippets = Snippet.all
+    @snippets = @logged_in_user.snippets
+    # @snippets = Snippet.all
   end
 
   def show
@@ -13,12 +16,10 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = Snippet.create(snippet_params)
-    @snippet.save
+    @snippet = @logged_in_user.snippets.create(snippet_params)
 
     if @snippet.valid?                                
       redirect_to snippet_path(@snippet.id)              
-
     else
       flash[:errors] = @snippet.errors.full_messages    
       redirect_to new_snippet_path(@snippet)               
