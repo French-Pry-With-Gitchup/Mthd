@@ -1,60 +1,61 @@
-<h2>
-    <%= @user.name %>'s Profile
-</h2>
-<br><br>
-
-<!-- If user is not logged in forces login else displays Logout button -->
-<% if logged_in? %>
-    <p>Welcome, <%= logged_in_user.name %> </p>
-    <%= button_to "Log out", "/user/logout" %>
-<% else %>
-    <%= button_to "Log In", user_login_path %>
-<% end %>
-
-<!-- Handles User Category Creation -->
-
-
-<!-- Handles User Snippet Creation --> 
-<% if logged_in? %>
-    <%= button_to "New Snippets", snippet_new_path %>
-<% end %>
-
-<!-- Handles User Edit/Delete -->
-<% if logged_in? && logged_in_user.id == @user.id %>
-    <%= button_to "Edit Profile", edit_user_path(@user), method: :get%>
-
-    <%= button_to "Delete Account", @user, method: :delete %>
-<% end %>
-
-<!-- Handle Current User Category Display -->
-<br><br> <h2> Category </h2>
-<% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
-    <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
-        <%= "This User does not have any Categories" %>
-    <% else %>
-        <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
-            <% if c.user_id == @user.id %>
-                <%= c.name %>        <br>
-                <%= c.language %>    <br>
-                <%= c.description %>
+<div class="userDashboard">
+  <nav>
+    <div class="navLink userLink">
+      <!-- would an image go here? if we implement that? -->
+      <h2><%= @user.name %></h2>
+    </div>
+    <% if logged_in? && logged_in_user.id == @user.id %>
+      <div class="navLink userEdit">
+        <%# set each to be an ID perhaps %>
+        <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class:'btn'%>
+      </div>
+    <% end %>
+    <div class="navLink userSnippets">
+      <% if logged_in? %>
+          <!-- Handles User Snippet Creation -->
+          <%= button_to "New Snippets", snippet_new_path, class:'btn' %>
+      <% end %>
+    </div>
+    <div class="navLink userLogin">
+      <!-- If user is not logged in forces login else displays Logout button -->
+      <% if logged_in? %>
+          <%= button_to "Log out", "/user/logout", class:'btn' %>
+      <% else %>
+          <%= button_to "Log In", user_login_path, class:'btn' %>
+      <% end %>
+    </div>
+  </nav>
+  <section class="dashContent">
+    <br><br> <h2> Category </h2>
+    <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
+        <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
+            <%= "This User does not have any Categories" %>
+        <% else %>
+            <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
+                <% if c.user_id == @user.id %>
+                    <%= c.name %>        <br>
+                    <%= c.language %>    <br>
+                    <%= c.description %>
+                <% end %>
             <% end %>
         <% end %>
     <% end %>
-<% end %>
 
-<!-- Handle Current User Snippet Display -->
-<br><br><h2> Snippet </h2>
-<% if logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
-    <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
-        <%= "This User does not have any Snippets" %>
-    <% else %>
-        <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
-            <% if s.user_id == @user.id %>
-                <p> Title: </p>
-                <%= link_to "#{s.title}", snippet_path(s.id) %> <br>
-                <p> Code: </p> 
-                <%= s.code %> <br><br>
+    <!-- Handle Current User Snippet Display -->
+    <br><br><h2> Snippet </h2>
+    <% if logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
+        <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
+            <%= "This User does not have any Snippets" %>
+        <% else %>
+            <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
+                <% if s.user_id == @user.id %>
+                    <p> Title: </p>
+                    <%= link_to "#{s.title}", snippet_path(s.id) %> <br>
+                    <p> Code: </p>
+                    <%= s.code %> <br><br>
+                <% end %>
             <% end %>
         <% end %>
     <% end %>
-<% end %>
+  </section>
+</div>

@@ -96,3 +96,50 @@ a {
   -moz-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
   box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
 }
+
+.userDashboard  {
+  background-color: #201D20;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+// ok so this breaks the snippet page
+// bc nav shows up here!
+nav {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  width: 20vw;
+}
+
+.dashContent {
+  width: 100%;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.navLink {
+  height: 25vh;
+  line-height: 25vh;
+}
+
+.userLink {
+  background-color: #f92672;
+}
+
+.userLogin {
+  background-color: #66d9ef;
+}
+
+.userSnippets {
+  background-color: #fd971f;
+}
+
+.userEdit {
+  background-color: #a6e22e;
+}
