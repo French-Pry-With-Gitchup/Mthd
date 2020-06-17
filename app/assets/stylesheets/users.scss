@@ -95,7 +95,7 @@ a {
 
 .userDashboard  {
   // background-color: #3e3d32;
-  background-color: #25283D;
+  background-color: #f8f8f2;
   // background-image: asset-url('code-snippet.svg');
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -114,7 +114,8 @@ nav {
   align-content: stretch;
   justify-content: space-around;
   width: 20vw;
-  border-radius: 15px;
+  // border-radius: 0 15px 15px 0;
+  border-right: 3px solid red;
   // height: 90vh;
   // margin: 5vh 0;
   padding: 0 1vw 0;
@@ -182,9 +183,9 @@ nav {
   margin: 0 auto;
   position: relative;
   top: 50px;
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
 }
 
 .snippetHeader {
@@ -207,15 +208,15 @@ nav {
   font-size: 1.2em;
   padding: .75em 0;
   // overflow-y: scroll;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   // go for a bolded italic font here!
 }
 
 .snippetLink:hover {
   transform: scale(1.025);
   transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(166,226,46,0.5);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(166,226,46,0.5);
+  box-shadow: 0px 0px 15px 0px rgba(166,226,46,0.5);
   // color: #ae81ff;
   // background-color: #201D20;
 }

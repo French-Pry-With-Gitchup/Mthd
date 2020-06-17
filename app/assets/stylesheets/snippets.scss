@@ -144,9 +144,17 @@ pre {
   border-left: 4px solid #ae81ff;
 }
 
-#snippetEditBtn {
+.view__snippetBtnContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.view__snippetBtnContainer > a {
+  width: 50%;
+}
+
+.snippetEditBtn {
   height: 60px;
-  width: 100%;
   line-height: 60px;
   color: #201D20;
   border: 0;
@@ -213,5 +221,3 @@ pre {
   background-color: #fdf;
 
 }
-
-
