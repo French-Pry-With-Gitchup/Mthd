@@ -109,11 +109,15 @@ a {
 // bc nav shows up here!
 nav {
   display: flex;
+  background-color: #2E2F2F;
   flex-direction: column;
   align-content: stretch;
   justify-content: space-around;
   width: 20vw;
-  padding: 0 0 0 3vw;
+  border-radius: 15px;
+  // height: 90vh;
+  // margin: 5vh 0;
+  padding: 0 1vw 0;
 }
 
 .dashContainer {
@@ -130,8 +134,8 @@ nav {
 }
 
 .navLink {
-  height: 18vh;
-  line-height: 25vh;
+  height: 15vh;
+  line-height: 15vh;
   border-radius: 10px;
 }
 
