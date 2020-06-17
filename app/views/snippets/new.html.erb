@@ -13,7 +13,9 @@
     </div>
     <div id="lower">
         <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput', id:'snippetTextArea' %>
+        <%= f.button_to %>
         <%= f.submit 'Submit', id:'snippetSubmitBtn' %>
+        <%= link_to "Random"%>
       <% end %>
     </div>
 

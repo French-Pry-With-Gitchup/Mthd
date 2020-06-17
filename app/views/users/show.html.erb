@@ -19,7 +19,7 @@
       <!-- If user is not logged in forces login else displays Logout button -->
       <% if logged_in? %>
           <%= link_to user_logout_path do %>
-            <div class="navLink userLogin">Logout</div>
+            Logout
           <% end %>
       <% else %>
           <%= link_to "Log In", user_login_path, class:'btn' %>
