@@ -25,16 +25,18 @@
         <div id="private_Radio_Label"> <%= f.label "Is This Private?" %><br> 
           <div id="private_Radio_Form">
             <div id="left_button"> 
-              <%= f.label :is_private, "Yes", :value => "true"  %>
+              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button" %>
               <%= f.radio_button :is_private, true %>
             </div>
             <div id="right_button"> 
-              <%= f.label :is_private, "No", :value => "false" %>
+              <%= f.label :is_private, "No", :value => "false", class:"private_radio_button" %>
               <%= f.radio_button :is_private, false, :checked => true %>
             </div>
-          </div><br><br>
+          </div>
         </div>
-        <%= f.submit 'Submit', id:'snippetSubmitBtn' %>
+
+
+        <%= f.submit 'Submit', id:'snippetSubmitBtn' %><br><br>
       </div>
     <% end %>
 

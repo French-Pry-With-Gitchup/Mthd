@@ -26,10 +26,15 @@ html {
   line-height: 60px;
   color: #201D20;
   border: 0;
+  margin-top: 0;
   font-family: "Coolvetica Regular";
   font-size: 20px;
   text-transform: uppercase;
   background-color: #66d9ef;
+}
+
+#snippetSubmitBtn:hover {
+  background-color: #a1efe4;
 }
 
 #upper {
@@ -155,64 +160,58 @@ pre {
 
 // HANDLES SPECIALIZED BUTTONS FOR SNIPPETS
 #private_Radio_Label {
-  height: 5em;
+  height: 4em;
   width: 100%;
-  line-height: 3em;
   color: #201D20;
-  border: 0;
   font-family: "Coolvetica Regular";
-  font-size: 20px;
+  font-size: 15px;
   text-transform: uppercase;
   background-color: #fd971f;
   text-align: center;
-  border: medium ;
   display: inline-block;
 }
-
-#private_Radio_Form snippet[is_private] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
+#private_Radio_Form{
+  display: grid;
+  grid-template-areas: "l r";
 }
 
+// #private_Radio_Form input[type="radio"]  {
+//   opacity: 0;
+//   position: fixed;
+//   width: 0;
+// }
+
 #private_Radio_Form label {
-  background-color: #ddd;
-  padding: 10px 20px;
+  background-color: #f92672;
+  padding: 8px 15px;
   font-family: sans-serif, Arial;
-  font-size: 16px;
-  border: 2px solid #444;
-  border-radius: 4px;
+  font-size: 10px;
+
 }
 
 #private_Radio_Form #left_button{
-  background-color: green;
+  background-color: #fd971f;
+  grid-area: l;
 }
 
 #private_Radio_Form #right_button{
-  background-color: red;
+  background-color: #fd971f;
+  grid-area: r;
 }
 
-#private_Radio_Form input[type="radio"]:checked + label {
+#private_Radio_Form label:hover {
+  background-color: #fd5ff0;
+}
+
+.private_radio_button input[type="radio"]:checked + label {
   background-color:#bfb;
   border-color: #4c4;
 }
 
-#private_Radio_Form input[type="radio"]:focus + label {
+.private_radio_button input[type="radio"]:active + label {
   border: 2px dashed #444;
+  background-color: #fdf;
+
 }
 
-#private_Radio_Form label:hover {
-  background-color: #dfd;
-}
-
-
-// #snippet_is_private_true {
-//   background-color: #ffead3;
-//   size: 1em;
-// }
-
-// #snippet_is_private_false{
-//   background-color: #ffead3;
-//   size: 1em;
-// }
 
