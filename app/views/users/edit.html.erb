@@ -1,15 +1,13 @@
-<div id="signupContainer">
-    <section id="signup">
-        <div class="logo"></div>
-        <h1 class="formHeader">Edit your Account</h1>
+<div id="userEditContainer">
+    <section id="userEdit">
+        <h1 class="formHeader">Edit Your Account</h1>
         <!-- try to center this! also get ur fonts! -->
-        <div id="formSize">
+        <div id="editFormSize">
             <%= form_for(@user) do |f| %>
-                <%= f.label :name %>
-                <%= f.text_field :name, class: 'lineInput', placeholder: 'Name'%>
-                <%= f.label :password %>
-                <%= f.password_field :password, class: 'lineInput', placeholder: 'Password'%>
+                <%= f.text_field :name, class: 'edit_lineInput', placeholder: 'Name'%>
+                <%= f.password_field :password, class: 'edit_lineInput', placeholder: 'Password'%>
                 <%= f.submit "Edit", id: 'signUpBtn'%>
+                <%= button_to "Delete Account", @user, method: :delete, class:'btn' %>
             <% end %>
 
             <% if flash[:errors] %>
@@ -19,5 +17,5 @@
             <% end %>
         </div>
     </section>
-    <section class="codeGraphic"></section>
+    <!-- <section class="codeGraphic"></section> -->
 </div>

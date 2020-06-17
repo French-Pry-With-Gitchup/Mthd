@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :user_find, only: [:show, :edit, :update, :destroy]
+    before_action :check_to_see_if_someones_logged_in, only: [:edit, :update, :destroy]
 
     # Shows the given user found by the table ID
     def show
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
     # Controls Views for new
     def new
         @user = User.new
+        @errors = flash[:errors]
     end
 
     # Controls the table creation logic
@@ -25,6 +27,9 @@ class UsersController < ApplicationController
 
     # Controls Views for edit
     def edit
+        unless @logged_in_user.id == @user.id
+            redirect_to @logged_in_user
+          end
     end
     
     # Controls the table update logic
@@ -33,16 +38,22 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)                        #   Redirects to the User page
     end
 
-    # Handles 
+    # Handles deletion of USER Account
+    def destroy
+        @user.destroy
+        redirect_to user_path
+    end
 
     # Entry point for login View page
     def login_form
+        @errors = flash[:errors]
     end
 
     # Handles incoming data from Login form
     def handle_login                                        
         @user = User.find_by(name: params[:name])           #
         if @user && @user.authenticate(params[:password])   #   IF the user exists and if the User password Authenticates properly, then user "signs in"
+            session[:user_id] = @user.id
             redirect_to @user                               #   Redirects to user page
         else                                                    
             flash[:errors] = "Wrong Username/Password"      #   Throws error on incorrect username/password validation
@@ -50,6 +61,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def logout
+        session[:user_id] = nil
+        redirect_to user_login_path
+    end
     private
 
     def user_find

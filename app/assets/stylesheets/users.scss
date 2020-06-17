@@ -1,7 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-#signupContainer {
+.signupContainer {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -9,7 +9,7 @@
   background-color: #f8f8f2;
 }
 
-#signup {
+.userForm {
   width: 50vw;
   height: fit-content;
   margin: 0 auto;
@@ -21,17 +21,13 @@ form {
   flex-direction: column;
 }
 
-#formSize {
+.formSize {
   width: 30vw;
   margin: 0 auto;
 }
 
 .formHeader {
   text-transform: uppercase;
-}
-
-.floatingLabel, .lineInput {
-  transition: all 0.2s;
 }
 
 .lineInput {
@@ -63,7 +59,7 @@ form {
   background-size: cover;
 }
 
-#signUpBtn {
+.userBtn {
   background-color: #A6E22E;
   color: #201D20;
   border: 0;
@@ -78,9 +74,217 @@ form {
   box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
 }
 
+.userRedirectPrompt {
+  color: #F92672;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #signUpBtn:hover {
   transition: 0.2s ease-in-out;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
   -moz-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
   box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+}
+
+.userDashboard  {
+  // background-color: #3e3d32;
+  background-color: #25283D;
+  // background-image: asset-url('code-snippet.svg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+// ok so this breaks the snippet page
+// bc nav shows up here!
+nav {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-around;
+  width: 20vw;
+  padding: 0 0 0 3vw;
+}
+
+.dashContainer {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.navLink {
+  height: 18vh;
+  line-height: 25vh;
+  border-radius: 10px;
+}
+
+.navLink:hover {
+  transform: scale(1.025);
+  transition: 0.3s ease-in-out;
+}
+
+.userLink {
+  // background-color: #f92672;
+  background-image: linear-gradient(to right top, #f92672, #ff2c8f, #ff39af, #ff4bcf, #fd5ff0);
+}
+
+.userLogin {
+  // background-color: #66d9ef;
+  background-image: linear-gradient(to left bottom, #ae81ff, #71a2ff, #31baff, #30ccff, #66d9ef);
+}
+
+.userEdit {
+  // background-color: #A6E22E;
+  background-image: linear-gradient(to left top, #a1efe4, #82f1cc, #79efa5, #88eb72, #a6e22e);
+}
+
+.userSnippets {
+  // background-color: #fd971f;
+  background-image: linear-gradient(to right bottom, #e6db74, #eacc5b, #f0bc44, #f6aa30, #fd971f);
+}
+
+.dashContent {
+  background-color: #2E2F2F;
+  width: 90%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+.headerContainer {
+  // border: 1px solid red;
+  padding: 5px 0;
+  background-color: #ae81ff;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+.snippetHeader {
+  font-family: "Coolvetica Regular";
+  color: #201D20;
+  text-transform: uppercase;
+}
+
+// think about a border on the side?
+
+.snippetLink {
+  color: #201D20;
+  background-color: #A6E22E;
+  font-family: "Helvetica";
+  // height: fit-content;
+  height: 10vh;
+  // how do you get them to respond to the length of text, and then by display grid?
+  width: 15vw;
+  text-align: center;
+  font-size: 1.2em;
+  padding: .75em 0;
+  // overflow-y: scroll;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  // go for a bolded italic font here!
+}
+
+.snippetLink:hover {
+  transform: scale(1.025);
+  transition: 0.3s ease-in-out;
+  // color: #ae81ff;
+  // background-color: #201D20;
+}
+
+// could've used ids for here, to be dry
+.snippetGrid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 12vw);
+  justify-items: center;
+  justify-content: space-around;
+  // height: 40vh;
+  grid-row-gap: 25px;
+  padding: 10vh 0 5vh;
+  justify-content: space-around;
+}
+
+.categoryGrid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 12vh);
+  justify-items: center;
+  justify-content: space-around;
+  grid-row-gap: 3vh;
+  padding: 10vh 0 5vh;
+}
+
+#userEditContainer {
+  background-color: #A6E22E;
+  height: 100vh;
+  width: 100vw;
+}
+
+#userEdit {
+  background-color: #2E2F2F;
+  padding: 5px;
+  // border: 1px solid red;
+  width: 35vw;
+  margin: 0 auto;
+  position: relative;
+  top: 25vh;
+  height: 50vh;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+#userEdit > h1 {
+  color: #fff;
+}
+
+#editFormSize {
+  width: 25vw;
+  margin: 0 auto;
+}
+
+.edit_lineInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(166, 226, 46, 0.5);
+  margin: 15px 0;
+  padding: 5px;
+}
+
+.edit_lineInput:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(166, 226, 46, 1);
+}
+
+.edit_lineInput::placeholder {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
 }
