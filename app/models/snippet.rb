@@ -3,6 +3,6 @@ class Snippet < ApplicationRecord
     has_many :topics
     has_many :categories, through: :topics
 
-    validates_presence_of :title, :code, on: :create
+    validates_presence_of :title, :code, :is_private, on: :create
 end
 
