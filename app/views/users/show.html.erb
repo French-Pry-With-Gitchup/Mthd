@@ -19,7 +19,7 @@
       <!-- If user is not logged in forces login else displays Logout button -->
       <% if logged_in? %>
           <%= link_to user_logout_path do %>
-            Logout
+            <div class="navLink userLogin">Logout</div>
           <% end %>
       <% else %>
           <%= link_to "Log In", user_login_path, class:'btn' %>
@@ -53,7 +53,20 @@
     </div>
     <section class="dashContent" id="showSnippet">
       <div class="snippetGrid">
-        <% if logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
+        <%# IF THE USER IS NOT THE LOGGED IN USER CHECK FOR IF IS_PRIVATE %>
+        <% if logged_in_user.id != @user.id %>
+            <%if !Snippet.all.map(&:user_id).include?(@user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
+                <%= "This user doesn't have any snippets" %>
+            <% else %>
+                <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
+                    <% if s.user_id == @user.id && s.is_private == false%>
+                        <%= link_to snippet_path(s.id) do %>
+                          <div class='snippetLink'><%= "#{s.title}" %></div>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% elsif logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
             <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
                 <%= "This user doesn't have any snippets" %>
             <% else %>
