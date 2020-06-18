@@ -7,11 +7,11 @@
       <p><%= markdown(@snippet.code) %></p>
     </article>
     <div class="view__snippetBtnContainer">
-      <%= link_to user_path(logged_in_user.id) do %>
-        <div class="returnBtn">Return</div>
-      <% end %>
       <%= link_to edit_snippet_path(@snippet.id) do %>
-        <div class="snippetEditBtn">Edit</div>
+        <div class="snippetEditBtn" style="background-color: #e6db74;">Edit</div>
+      <% end %>
+      <%= link_to user_path(logged_in_user.id) do %>
+        <div class="returnBtn" style="background-color: #e6db74;">Return</div>
       <% end %>
     </div><br><br>
 

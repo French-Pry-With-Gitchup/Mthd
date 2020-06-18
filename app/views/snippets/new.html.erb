@@ -23,16 +23,11 @@
 
         <!-- Handles the Set to private functionality -->
         <div class="private_Radio_Label">
-         <%= f.label "Is This Snippet Private?"%><br>
           <div class="private_Radio_Form">
-            <div class="left_button">
-              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button" %>
               <%= f.radio_button :is_private, true %>
-            </div>
-            <div class="right_button">
-              <%= f.label :is_private, "No", :value => "false", class:"private_radio_button" %>
+              <%= f.label :is_private, "Private", :value => "true", class:"private_radio_button" %>
               <%= f.radio_button :is_private, false, :checked => true %>
-            </div>
+              <%= f.label :is_private, "Public", :value => "false", class:"private_radio_button" %>
           </div>
         </div>
         <div class="user_Submittals">

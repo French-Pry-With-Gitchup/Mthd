@@ -10,15 +10,12 @@
     </div>
     <div class="lower">
       <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput snippetTextArea' %>
+
         <div class="private_Radio_Form">
-          <div class="left_button">
-            <%= f.label :is_private, "Private", :value => "true", class:"private_radio_button" %>
-            <%= f.radio_button :is_private, true %>
-          </div>
-          <div class="right_button">
-            <%= f.label :is_private, "Public", :value => "false", class:"private_radio_button" %>
-            <%= f.radio_button :is_private, false, :checked => true %>
-          </div>
+          <%= f.radio_button :is_private, true %>
+          <%= f.label :is_private, "Private", :value => "true", class:"private_radio_button" %>
+          <%= f.radio_button :is_private, false, :checked => true %>
+          <%= f.label :is_private, "Public", :value => "false", class:"private_radio_button" %>
         </div>
         <%= f.submit 'Update', class:'snippetSubmitBtn' %>
     <% end %>
