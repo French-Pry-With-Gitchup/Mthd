@@ -108,8 +108,8 @@ nav {
   flex-direction: column;
   align-content: stretch;
   justify-content: space-around;
-  width: 25vw;
-  padding: 0 1vw 0;
+  width: 20vw;
+  padding: 0 2vw 0;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
@@ -129,9 +129,13 @@ nav {
 }
 
 .navLink {
-  height: 15vh;
-  line-height: 15vh;
-  border-radius: 10px;
+  height: 10vh;
+  line-height: 10vh;
+  color: #f8f8f2;
+  font-family: "Coolvetica Regular";
+  text-align: center;
+  text-transform: uppercase;
+  // border-radius: 10px;
 }
 
 .navLink:hover {
@@ -140,33 +144,37 @@ nav {
 }
 
 .userLink {
+  border-left: 5px solid #f92672;
+  background-color: #404040;
   // background-color: #f92672;
-  background-image: linear-gradient(to right top, #f92672, #ff2c8f, #ff39af, #ff4bcf, #fd5ff0);
+  // background-image: linear-gradient(to right top, #f92672, #ff2c8f, #ff39af, #ff4bcf, #fd5ff0);
 }
 
 .userLogin {
+  border-left: 5px solid #66d9ef;
+  background-color: #404040;
   // background-color: #66d9ef;
-  background-image: linear-gradient(to left bottom, #ae81ff, #71a2ff, #31baff, #30ccff, #66d9ef);
+  // background-image: linear-gradient(to left bottom, #ae81ff, #71a2ff, #31baff, #30ccff, #66d9ef);
 }
 
 .userEdit {
+  border-left: 5px solid #A6E22E;
+  background-color: #404040;
   // background-color: #A6E22E;
-  background-image: linear-gradient(to left top, #a1efe4, #82f1cc, #79efa5, #88eb72, #a6e22e);
+  // background-image: linear-gradient(to left top, #a1efe4, #82f1cc, #79efa5, #88eb72, #a6e22e);
 }
 
 .userSnippets {
+  border-left: 5px solid #fd971f;
+  background-color: #404040;
   // background-color: #fd971f;
-  background-image: linear-gradient(to right bottom, #e6db74, #eacc5b, #f0bc44, #f6aa30, #fd971f);
+  // background-image: linear-gradient(to right bottom, #e6db74, #eacc5b, #f0bc44, #f6aa30, #fd971f);
 }
 
 .dashContent {
   background-color: #333;
-  // background-image: asset-url('code-snippet.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
   width: 90%;
   margin: 0 auto;
-  // overflow-y: scroll;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
@@ -205,6 +213,9 @@ nav {
   text-align: center;
   font-size: 1.2em;
   padding: .75em 0;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
+  box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
 }
 
 .snippetLink:hover {
@@ -217,7 +228,7 @@ nav {
   width: 100%;
   margin: 0 auto;
   padding: 10vh 0 5vh;
-  height: 45vh;
+  height: 40vh;
 }
 
 .snippetGridScroll {
