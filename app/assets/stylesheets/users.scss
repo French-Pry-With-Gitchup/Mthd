@@ -129,7 +129,7 @@ nav {
   color: #fff;
   display: flex;
   flex-direction: column;
-  grid-template-areas: 
+  grid-template-areas:
   "t
   b";
 }
@@ -348,3 +348,8 @@ nav {
   line-height: 5vh;
 }
 
+.edit_rd_button:hover {
+  background-color: #333;
+  color: #A6E22E;
+  transition: 0.2s ease-in-out;
+}
