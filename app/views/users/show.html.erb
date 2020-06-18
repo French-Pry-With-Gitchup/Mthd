@@ -29,7 +29,7 @@
       <div class="categoryGrid">
         <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
             <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
-                <%= "This User does not have any Categories" %>
+                <p><%= "This User does not have any Categories" %></p>
             <% else %>
                 <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>

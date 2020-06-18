@@ -31,9 +31,10 @@ class UsersController < ApplicationController
             redirect_to @logged_in_user
           end
     end
-    
+
     # Controls the table update logic
     def update
+        @user = User.find(params[:id])
         @user.update(user_params)                           #   Updates the users settings with Validated incoming Parameters
         redirect_to user_path(@user)                        #   Redirects to the User page
     end
@@ -50,12 +51,12 @@ class UsersController < ApplicationController
     end
 
     # Handles incoming data from Login form
-    def handle_login                                        
+    def handle_login
         @user = User.find_by(name: params[:name])           #
         if @user && @user.authenticate(params[:password])   #   IF the user exists and if the User password Authenticates properly, then user "signs in"
             session[:user_id] = @user.id
             redirect_to @user                               #   Redirects to user page
-        else                                                    
+        else
             flash[:errors] = "Wrong Username/Password"      #   Throws error on incorrect username/password validation
             redirect_to user_login_path                     #   Redirects to login page
         end

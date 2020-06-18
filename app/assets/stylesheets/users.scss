@@ -132,6 +132,7 @@ nav {
 
 .btn {
   background: none;
+  background-color: none;
   outline: none;
   border: none;
 }
@@ -266,14 +267,14 @@ nav {
 
 #userEdit {
   background-color: #2E2F2F;
-  padding: 5px;
+  padding: 10vh 0 0;
   // border: 1px solid red;
   width: 35vw;
   margin: 0 auto;
   position: relative;
   top: 25vh;
-  height: 50vh;
-  border-radius: 25px;
+  height: 45vh;
+  // border-radius: 25px;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
@@ -318,7 +319,7 @@ nav {
 .user__editBtnContainer > input {
   background-color: #A6E22E;
   height: 100%;
-  width: 50%;
+  width: 100%;
   font-family: "Coolvetica Regular";
   text-transform: uppercase;
 }
