@@ -5,31 +5,31 @@
     <%= form_for @snippet do |f| %>
 
       <!-- Handles the Title text field -->
-      <%= f.text_field :title, placeholder: 'Add your title here', class:'snippetInput', id:'snippetTitle' %>
+      <%= f.text_field :title, placeholder: 'Title', class:'snippetInput', id:'snippetTitle' %>
       <div id="wpContainer">
         <!-- do we make these divs with an anchor? or keep them as buttons? -->
-        <!-- will be triggered to toggle the write/preview -->        
+        <!-- will be triggered to toggle the write/preview -->
         <!-- Shows Write Page -->
         <div class="wpBtn">Write</div> <%# If the user clicks this button then display the code area ..::PERSIST  %>
 
         <!-- Shows Rogue Markdown -->
         <div class="wpBtn">Preview</div> <%# If the user clicks this button then display the preview area ..::PERSIST  %>
       </div>
-    </div> 
-    
+    </div>
+
       <div id="lower">
         <!-- Handles Code Text -->
         <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput', id:'snippetTextArea' %>
 
         <!-- Handles the Set to private functionality -->
         <div id="private_Radio_Label">
-         <%= f.label "Is This Snippet Private?"%><br> 
+         <%= f.label "Is This Snippet Private?"%><br>
           <div id="private_Radio_Form">
-            <div id="left_button"> 
+            <div id="left_button">
               <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button", private_state_text: "Yes" %>
               <%= f.radio_button :is_private, true %>
             </div>
-            <div id="right_button"> 
+            <div id="right_button">
               <%= f.label :is_private, "No", :value => "false", class:"private_radio_button" %>
               <%= f.radio_button :is_private, false, :checked => true, private_state_text: "No" %>
             </div>

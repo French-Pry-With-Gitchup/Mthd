@@ -107,12 +107,20 @@ nav {
   background-color: #2E2F2F;
   flex-direction: column;
   align-content: stretch;
-  justify-content: space-around;
+  // justify-content: space-between;
   width: 20vw;
-  padding: 0 2vw 0;
+  padding: 3vh 2vw 0;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+#navLogo {
+  height: 90px;
+  width: 100%;
+  margin: 1vh auto;
+  background-image: url('nav-logo.svg');
+  background-size: cover;
 }
 
 .dashContainer {
@@ -135,6 +143,8 @@ nav {
   font-family: "Coolvetica Regular";
   text-align: center;
   text-transform: uppercase;
+  // padding: 5px 0;
+  margin: 5px 0;
   // border-radius: 10px;
 }
 

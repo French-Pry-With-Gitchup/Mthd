@@ -1,22 +1,17 @@
 <div class="userDashboard">
   <nav>
-    <div class="navLink userLink">
-      <!-- would an image go here? if we implement that? -->
-      <!-- this isn't going to be a button, this'll have an image -->
-      <h2><%= @user.name %></h2>
-    </div>
+    <div id="navLogo"></div>
+    <div class="navLink userLink"><%= @user.name %></div>
+    <% if logged_in? %>
+        <%= link_to new_snippet_path do %>
+          <div class="navLink userSnippets">Create a Snippet</div>
+        <% end %>
+    <% end %>
     <% if logged_in? && logged_in_user.id == @user.id %>
         <%= link_to edit_user_path(@user), method: :get do %>
           <div class="navLink userEdit">Account Settings</div>
         <% end %>
     <% end %>
-
-      <% if logged_in? %>
-          <%= link_to new_snippet_path do %>
-            <div class="navLink userSnippets">Create a Snippet</div>
-          <% end %>
-      <% end %>
-
       <!-- If user is not logged in forces login else displays Logout button -->
       <% if logged_in? %>
           <%= link_to user_logout_path do %>
