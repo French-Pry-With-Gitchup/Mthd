@@ -41,8 +41,12 @@ class UsersController < ApplicationController
 
     # Handles deletion of USER Account
     def destroy
+        @user = User.find(params[:id])
         @user.destroy
-        redirect_to user_path
+        # redirect_to user_login_path
+        respond_to do |format|
+            format.html { redirect_to user_login_path notice: 'User was successfully deleted.' }
+        end
     end
 
     # Entry point for login View page
