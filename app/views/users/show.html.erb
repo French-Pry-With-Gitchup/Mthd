@@ -1,7 +1,6 @@
 <div class="userDashboard">
   <nav>
     <div id="navLogo"></div>
-    <div class="navLink userLink"><%= @user.name %></div>
     <% if logged_in? %>
         <%= link_to new_snippet_path do %>
           <div class="navLink userSnippets">Create a Snippet</div>
@@ -10,6 +9,9 @@
     <% if logged_in? && logged_in_user.id == @user.id %>
         <%= link_to new_category_path do %>
           <div class="navLink userEdit">Create a Category</div>
+        <% end %>
+        <%= link_to edit_user_path(@user), method: :get do %>
+          <div class="navLink userLink">Account Settings</div>
         <% end %>
     <% end %>
 
