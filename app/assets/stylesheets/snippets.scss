@@ -243,3 +243,22 @@ input[type="radio"]:checked + .private_radio_button {
 .returnBtn:hover {
   transition: 0.1s;
 }
+
+//Handles look for category selection button
+#snippet_Category_Select{
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #201D20;
+  border: 0;
+  margin-top: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #7e3636;
+}
+
+#snippet_Category_Select:hover {
+  background-color: #ec7d7d;
+  transition: 0.1s;
+}

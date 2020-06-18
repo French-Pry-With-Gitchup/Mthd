@@ -10,10 +10,11 @@
         <!-- do we make these divs with an anchor? or keep them as buttons? -->
         <!-- will be triggered to toggle the write/preview -->
         <!-- Shows Write Page -->
-        <div class="wpBtn">Write</div> <%# If the user clicks this button then display the code area ..::PERSIST  %>
+        <div id="snippet_Category_Select">
+          <%# Select a Category %>
+          <%= f.collection_select :title, Category.all, :id, :name, :prompt => 'Select One' %>
+        </div> <%# If the user clicks this button then display the code area ..::PERSIST  %>
 
-        <!-- Shows Rogue Markdown -->
-        <div class="wpBtn">Preview</div> <%# If the user clicks this button then display the preview area ..::PERSIST  %>
       </div>
     </div>
 

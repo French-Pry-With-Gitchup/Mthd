@@ -11,6 +11,7 @@ class SnippetsController < ApplicationController
 
   def new
     @snippet = Snippet.new
+    
   end
 
   def edit
@@ -25,6 +26,7 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = @logged_in_user.snippets.create(snippet_params)
+
     if @logged_in_user != nil
         if @snippet.valid?
           redirect_to snippet_path(@snippet.id)
@@ -42,6 +44,6 @@ class SnippetsController < ApplicationController
   private
 
   def snippet_params
-    params.require(:snippet).permit(:title, :code, :is_private)
+    params.require(:snippet).permit(:title, :code, :is_private, category_attributes:[:name])
   end
 end

@@ -23,13 +23,13 @@ class CategoriesController < ApplicationController
         end
     end
 
-      private
+    private
 
-      def user_find
-          @user = User.find(params[:id])                      #   Searches for the User by their ID on the table
-      end
-  
-      def category_params
-          params.require(:category).permit(:name, :language, :description)      #   Does Proper Validation Check for User Parameters
-      end
+    def user_find
+        @user = User.find(params[:id])                        #   Searches for the User by their ID on the table
+    end
+
+    def category_params
+        params.require(:category).permit(:name, :language, :description)      #   Does Proper Validation Check for User Parameters
+    end
 end

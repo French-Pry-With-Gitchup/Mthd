@@ -2,16 +2,17 @@
   <div class="view__snippetContainer">
     <div class="view__snippetHeaderContainer">
       <h1 class="view__snippetHeader"><%= @snippet.title %></h1>
+
     </div>
     <article class="view__snippetBody">
       <p><%= markdown(@snippet.code) %></p>
     </article>
     <div class="view__snippetBtnContainer">
       <%= link_to edit_snippet_path(@snippet.id) do %>
-        <div class="snippetEditBtn" style="background-color: #e6db74;">Edit</div>
+        <div class="snippetEditBtn"">Edit</div>
       <% end %>
       <%= link_to user_path(logged_in_user.id) do %>
-        <div class="returnBtn" style="background-color: #e6db74;">Return</div>
+        <div class="snippetReturnBtn">Return</div>
       <% end %>
     </div><br><br>
 

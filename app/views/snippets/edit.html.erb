@@ -4,8 +4,7 @@
     <%= form_for @snippet do |f| %>
       <%= f.text_field :title, placeholder: 'Title', class:'snippetInput snippetTitle' %>
       <div class="wpContainer">
-        <div class="wpBtn">Write</div>
-        <div class="wpBtn">Preview</div>
+  <h1 class="view__snippetHeader" style="background-color: #a1efe4">Language - <%= @category.language %></h1>
       </div>
     </div>
     <div class="lower">

@@ -55,11 +55,26 @@ html {
     text-align: center;
     padding-bottom: 2px;
   }
-
-  .catReturnBtn:hover {
+  .catReturnBtn_show {
+    height: 100%;
+    width: 40.75em;
+    line-height: 60px;
+    color: #201D20;
+    font-family: "Coolvetica Regular";
+    font-size: 20px;
+    text-transform: uppercase;
     background-color: #ae81ff;
+    text-align: center;
+    padding-bottom: 2px;
   }
 
+  .catReturnBtn:hover {
+    background-color: #ddcef8;
+  }
+
+  .catReturnBtn_show:hover {
+    background-color: #ddcef8;
+  }
 
   .cat_Submittals > * {
     width: 50%;

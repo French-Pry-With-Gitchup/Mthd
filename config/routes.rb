@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   patch 'snippet/:id', to: 'snippets#update'
   # =========== CATEGORIES ROUTES ===========
 
-  resources :categories # Not in use Yet
+  resources :categories, only: %i[index new show create] # Not in use Yet
+
 
   # =========== USER ROUTES ===========
   resources :users, only: %i[show create edit update destroy]      # Will build up each CRUD function as we develop it over time.

@@ -39,8 +39,8 @@
               <% else %>
                   <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>
-                      <%= link_to categories_path(c.id) do %>
-                        <div class='snippetLink'><%= "#{c.language}" %></div>
+                      <%= link_to c do %>
+                        <div class='snippetLink'><%= "#{c.name} [#{c.language}]" %></div>
                       <% end %>
                     <% end %>
                   <% end %>
@@ -58,7 +58,7 @@
       <div class="snippetGridContainer">
         <div class="snippetGridScroll">
           <%# IF THE USER IS NOT THE LOGGED IN USER CHECK FOR IF IS_PRIVATE %>
-          <% if logged_in_user.id != @user.id %>
+          <% if logged_in_user.id != @user.id && logged_in_user %>
               <%if !Snippet.all.map(&:user_id).include?(@user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
                   <h2 class="noSnippetCat">
                     <%= "You don't have any snippets" %>
