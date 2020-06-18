@@ -116,10 +116,14 @@ nav {
 }
 
 .dashContainer {
+  height: 100%;
   width: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
+  grid-template-areas: 
+  "t
+  b";
 }
 
 .btn {
@@ -318,3 +322,4 @@ nav {
 .edit_Labels:active{
   color: silver;
 }
+

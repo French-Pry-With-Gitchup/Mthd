@@ -35,8 +35,8 @@
       <h1 class="snippetHeader">Categories</h1>
     </div>
     <section class="dashContent" id="showCategory">
-     <!-- <div class="snippetGridContainer">  CULPRIT 1 --> 
-         <!-- <div class="snippetGridScroll"> CULPRIT 2 -->
+      <div class="snippetGridContainer">
+        <div class="snippetGridScroll">
           <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
               <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
                 <%= "This User does not have any Categories" %>
@@ -44,15 +44,14 @@
                   <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>
                       <%= link_to categories_path(c.id) do %>
-                        <!-- <div class='snippetLink'><%= "#{c.name}" %></div> CULPRIT 3 -->
+                        <div class='snippetLink'><%= "#{c.name}" %></div>
                       <% end %>
                     <% end %>
                   <% end %>
               <% end %>
           <% end %>
-        <!-- </div> CULPRIT 4 -->
-        
-      <!-- </div> CULPRIT 5 -->
+        </div>
+      </div>
     </section>
 
     <!-- Handle Current User Snippet Display -->
