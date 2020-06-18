@@ -42,3 +42,7 @@ h1, h2 {
   background-image: url('logo.svg');
   background-size: cover;
 }
+
+p {
+  font-family: Helvetica;
+}

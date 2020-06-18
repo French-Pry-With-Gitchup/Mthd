@@ -1,1 +1,27 @@
-<h1> THIS IS THE EDIT PAGE </h1>
+<div class="snippetContainer">
+  <div class="snippetFormWrapper">
+    <div class="upper">
+    <%= form_for @snippet do |f| %>
+      <%= f.text_field :title, placeholder: 'Title', class:'snippetInput snippetTitle' %>
+      <div class="wpContainer">
+        <div class="wpBtn">Write</div>
+        <div class="wpBtn">Preview</div>
+      </div>
+    </div>
+    <div class="lower">
+      <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput snippetTextArea' %>
+        <div class="private_Radio_Form">
+          <div class="left_button">
+            <%= f.label :is_private, "Private", :value => "true", class:"private_radio_button" %>
+            <%= f.radio_button :is_private, true %>
+          </div>
+          <div class="right_button">
+            <%= f.label :is_private, "Public", :value => "false", class:"private_radio_button" %>
+            <%= f.radio_button :is_private, false, :checked => true %>
+          </div>
+        </div>
+        <%= f.submit 'Update', class:'snippetSubmitBtn' %>
+    <% end %>
+  </div>
+  </div>
+</div>

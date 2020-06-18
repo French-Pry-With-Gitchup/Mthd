@@ -1,6 +1,6 @@
 class SnippetsController < ApplicationController
   before_action :check_to_see_if_someones_logged_in
-  
+
   def index
     @snippets = @logged_in_user.snippets
   end
@@ -13,14 +13,24 @@ class SnippetsController < ApplicationController
     @snippet = Snippet.new
   end
 
+  def edit
+    @snippet = Snippet.find(params[:id])
+  end
+
+  def update
+    @snippet = Snippet.find(params[:id])
+    @snippet.update(snippet_params)
+    redirect_to snippet_path(@snippet.id)
+  end
+
   def create
     @snippet = @logged_in_user.snippets.create(snippet_params)
     if @logged_in_user != nil
-        if @snippet.valid?                                
-          redirect_to snippet_path(@snippet.id)              
+        if @snippet.valid?
+          redirect_to snippet_path(@snippet.id)
         else
-          flash[:errors] = @snippet.errors.full_messages    
-          redirect_to new_snippet_path(@snippet)               
+          flash[:errors] = @snippet.errors.full_messages
+          redirect_to new_snippet_path(@snippet)
         end
       else
         respond_to do |format|

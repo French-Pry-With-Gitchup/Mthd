@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   # resources :topics     # Only needed for database -+
-  # =========== SNIPPETS ROUTES =========== 
+  # =========== SNIPPETS ROUTES ===========
   resources :snippets
+  post 'snippet/new', to: 'snippets#new'
+  patch 'snippet/:id', to: 'snippets#update'
+  # =========== CATEGORIES ROUTES ===========
 
-  # =========== CATEGORIES ROUTES =========== 
   resources :categories # Not in use Yet
 
-  # =========== USER ROUTES =========== 
-  resources :users, only: %i[show create edit update destroy]      # Will build up each CRUD function as we develop it over time. 
+  # =========== USER ROUTES ===========
+  resources :users, only: %i[show create edit update destroy]      # Will build up each CRUD function as we develop it over time.
   get 'user/sign_up', to: 'users#new', as: :sign_up                       # Custom URL Route to look nice
   # Handle User Login Features
   root to: redirect('user/login')                                         # https://stackoverflow.com/questions/2066504/redirect-root-url-to-somewhere-else-in-rails-application
