@@ -329,3 +329,13 @@ nav {
 //   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
 //   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
 // }
+
+
+// Handles User Edit Labels
+.edit_Labels {
+  color: White;
+}
+
+.edit_Labels:active{
+  color: silver;
+}
