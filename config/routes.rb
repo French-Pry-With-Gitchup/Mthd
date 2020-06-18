@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :topics     # Only needed for database -+
   # =========== SNIPPETS ROUTES =========== 
-  resources :snippets, only: %i[show new create edit update delete]
+  resources :snippets
   post 'snippet/new', to: 'snippets#new'
 
   # =========== CATEGORIES ROUTES =========== 

@@ -2,9 +2,7 @@ class SnippetsController < ApplicationController
   before_action :check_to_see_if_someones_logged_in
   
   def index
-    # flash error here
     @snippets = @logged_in_user.snippets
-    # @snippets = Snippet.all
   end
 
   def show
