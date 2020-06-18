@@ -26,18 +26,22 @@
          <%= f.label "Is This Snippet Private?"%><br> 
           <div id="private_Radio_Form">
             <div id="left_button"> 
-              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button", private_state_text: "Yes" %>
+              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button" %>
               <%= f.radio_button :is_private, true %>
             </div>
             <div id="right_button"> 
               <%= f.label :is_private, "No", :value => "false", class:"private_radio_button" %>
-              <%= f.radio_button :is_private, false, :checked => true, private_state_text: "No" %>
+              <%= f.radio_button :is_private, false, :checked => true %>
             </div>
           </div>
         </div>
 
-
-        <%= f.submit 'Submit', id:'snippetSubmitBtn' %><br><br>
+        <div id="user_Submittals">
+          <%= f.submit 'Submit', id:'snippetSubmitBtn' %>
+          <%= link_to user_path(logged_in_user.id) do %>
+            <div id="returnBtn">Return</div>
+          <% end %>
+        </div><br><br>
       </div>
     <% end %>
 

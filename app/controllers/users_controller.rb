@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         @user.save                                          #   Saves the User to the Database
 
         if @user.valid?                                     #   Checks if the User passes the Validation Checks
+            session[:user_id] = @user.id
             redirect_to user_path(@user.id)                 #   Redirects the user to the User Page after the creation is done
         else
             flash[:errors] = @user.errors.full_messages     #   If the user does not type in the right password then an Error pops up
