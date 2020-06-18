@@ -2,6 +2,7 @@
   <nav>
     <div class="navLink userLink">
       <!-- would an image go here? if we implement that? -->
+      <!-- this isn't going to be a button, this'll have an image -->
       <h2><%= @user.name %></h2>
     </div>
     <% if logged_in? && logged_in_user.id == @user.id %>
@@ -52,33 +53,35 @@
       <h1 class="snippetHeader">Snippets</h1>
     </div>
     <section class="dashContent" id="showSnippet">
-      <div class="snippetGrid">
-        <%# IF THE USER IS NOT THE LOGGED IN USER CHECK FOR IF IS_PRIVATE %>
-        <% if logged_in_user.id != @user.id %>
-            <%if !Snippet.all.map(&:user_id).include?(@user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
-                <%= "This user doesn't have any snippets" %>
-            <% else %>
-                <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
-                    <% if s.user_id == @user.id && s.is_private == false%>
-                        <%= link_to snippet_path(s.id) do %>
-                          <div class='snippetLink'><%= "#{s.title}" %></div>
-                        <% end %>
-                    <% end %>
-                <% end %>
-            <% end %>
-        <% elsif logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
-            <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
-                <%= "This user doesn't have any snippets" %>
-            <% else %>
-                <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
-                    <% if s.user_id == @user.id %>
-                        <%= link_to snippet_path(s.id) do %>
-                          <div class='snippetLink'><%= "#{s.title}" %></div>
-                        <% end %>
-                    <% end %>
-                <% end %>
-            <% end %>
-        <% end %>
+      <div class="snippetGridContainer">
+        <div class="snippetGridScroll">
+          <%# IF THE USER IS NOT THE LOGGED IN USER CHECK FOR IF IS_PRIVATE %>
+          <% if logged_in_user.id != @user.id %>
+              <%if !Snippet.all.map(&:user_id).include?(@user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
+                  <%= "This user doesn't have any snippets" %>
+              <% else %>
+                  <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
+                      <% if s.user_id == @user.id && s.is_private == false%>
+                          <%= link_to snippet_path(s.id) do %>
+                            <div class='snippetLink'><%= "#{s.title}" %></div>
+                          <% end %>
+                      <% end %>
+                  <% end %>
+              <% end %>
+          <% elsif logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
+              <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
+                  <%= "This user doesn't have any snippets" %>
+              <% else %>
+                  <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
+                      <% if s.user_id == @user.id %>
+                          <%= link_to snippet_path(s.id) do %>
+                            <div class='snippetLink'><%= "#{s.title}" %></div>
+                          <% end %>
+                      <% end %>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </div>
       </div>
     </section>
   </div>

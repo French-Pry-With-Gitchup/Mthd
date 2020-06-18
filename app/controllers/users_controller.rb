@@ -48,6 +48,7 @@ class UsersController < ApplicationController
     def login_form
         @errors = flash[:errors]
     end
+    
 
     # Handles incoming data from Login form
     def handle_login                                        
