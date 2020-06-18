@@ -242,7 +242,7 @@ nav {
   width: 100%;
   margin: 0 auto;
   padding: 10vh 0 5vh;
-  height: 40vh;
+  height: 25vh;
 }
 
 .snippetGridScroll {
@@ -250,6 +250,17 @@ nav {
   height: 100%;
 }
 
+.categoryContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10vh 0 5vh;
+  height: 25vh;
+}
+
+.categoryScroll {
+  overflow-y: scroll;
+  height: 100%;
+}
 
 .categoryGrid {
   width: 100%;

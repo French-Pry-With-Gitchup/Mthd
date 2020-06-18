@@ -8,8 +8,8 @@
         <% end %>
     <% end %>
     <% if logged_in? && logged_in_user.id == @user.id %>
-        <%= link_to edit_user_path(@user), method: :get do %>
-          <div class="navLink userLink">Account Settings</div>
+        <%= link_to new_category_path do %>
+          <div class="navLink userEdit">Create a Category</div>
         <% end %>
     <% end %>
 
@@ -27,28 +27,31 @@
       <h1 class="snippetHeader">Categories</h1>
     </div>
     <section class="dashContent" id="showCategory">
-      <div class="categoryGrid">
-        <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
-            <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
-                  <h2 class="noSnippetCat">
-                    <%= "You don't have any categories" %>
-                  </h2>
-            <% else %>
-                <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
+     <div class="categoryContainer">
+         <div class="categoryScroll">
+          <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
+              <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
+                <h2 class="noSnippetCat">
+                  <%= "You don't have any categories" %>
+                </h2>
+              <% else %>
+                  <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>
-                        <%= c.name %>        <br>
-                        <%= c.language %>    <br>
-                        <%= c.description %>
+                      <%= link_to categories_path(c.id) do %>
+                        <div class='snippetLink'><%= "#{c.language}" %></div>
+                      <% end %>
                     <% end %>
-                <% end %>
-            <% end %>
-        <% end %>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </div>
       </div>
+
     </section>
 
     <!-- Handle Current User Snippet Display -->
     <div class="headerContainer">
-      <h1 class="snippetHeader">Snippets</h1>
+      <h1 class="snippetHeader"> Snippets </h1>
     </div>
     <section class="dashContent" id="showSnippet">
       <div class="snippetGridContainer">

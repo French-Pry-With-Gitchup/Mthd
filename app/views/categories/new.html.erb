@@ -1,0 +1,40 @@
+<div id="snippetContainer">
+  <div id="snippetFormWrapper">
+    <%# do we add a logo here? %>
+    <div id="upper">
+    <%= form_for @category do |f| %>
+
+      <!-- Handles the Title text field -->
+      <%= f.text_field :name, placeholder: 'Add your Category Name here', class:'snippetInput', id:'snippetTitle' %>
+      <%= f.text_field :language, placeholder: 'Add your Language Type here', class:'snippetInput', id:'snippetTitle' %>
+      <div id="wpContainer">
+        <!-- do we make these divs with an anchor? or keep them as buttons? -->
+        <!-- will be triggered to toggle the write/preview -->        
+        <!-- Shows Write Page -->
+        <div class="wpBtn">Write</div> <%# If the user clicks this button then display the code area ..::PERSIST  %>
+
+        <!-- Shows Rogue Markdown -->
+        <div class="wpBtn">Preview</div> <%# If the user clicks this button then display the preview area ..::PERSIST  %>
+      </div>
+    </div> 
+    
+      <div id="lower">
+        <!-- Handles Code Text -->
+        <%= f.text_area :description, placeholder: 'Add a short description of the Category Here', class:'snippetInput', id:'snippetTextArea' %>
+
+        <div id="user_Submittals">
+          <%= f.submit 'Submit', id:'snippetSubmitBtn' %>
+          <%= link_to user_path(logged_in_user.id) do %>
+            <div id="returnBtn">Return</div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p style ="color: red"><%= error %></p>
+      <% end %>
+    <% end %>
+  </div><br><br><br><br>
+</div>

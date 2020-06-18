@@ -25,12 +25,17 @@ class SnippetsController < ApplicationController
 
   def create
     @snippet = @logged_in_user.snippets.create(snippet_params)
-
-    if @snippet.valid?
-      redirect_to snippet_path(@snippet.id)
-    else
-      flash[:errors] = @snippet.errors.full_messages
-      redirect_to new_snippet_path(@snippet)
+    if @logged_in_user != nil
+        if @snippet.valid?
+          redirect_to snippet_path(@snippet.id)
+        else
+          flash[:errors] = @snippet.errors.full_messages
+          redirect_to new_snippet_path(@snippet)
+        end
+      else
+        respond_to do |format|
+            format.html { redirect_to user_login_path notice: 'Please Log In' }
+        end
     end
   end
 

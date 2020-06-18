@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         @user = User.new
         @errors = flash[:errors]
     end
-
+    
     # Controls the table creation logic
     def create
         @user = User.new(user_params)                       #   Creates a new user by grabbing the user parameters
