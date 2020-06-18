@@ -30,7 +30,9 @@
       <div class="categoryGrid">
         <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
             <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
-                <p><%= "This User does not have any Categories" %></p>
+                  <h2 class="noSnippetCat">
+                    <%= "You don't have any categories" %>
+                  </h2>
             <% else %>
                 <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>
@@ -54,7 +56,9 @@
           <%# IF THE USER IS NOT THE LOGGED IN USER CHECK FOR IF IS_PRIVATE %>
           <% if logged_in_user.id != @user.id %>
               <%if !Snippet.all.map(&:user_id).include?(@user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
-                  <%= "This user doesn't have any snippets" %>
+                  <h2 class="noSnippetCat">
+                    <%= "You don't have any snippets" %>
+                  </h2>
               <% else %>
                   <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
                       <% if s.user_id == @user.id && s.is_private == false%>
@@ -66,7 +70,9 @@
               <% end %>
           <% elsif logged_in? && logged_in_user.id == @user.id %>                <!-- Checks if the Current user is equal to the User page id -->
               <%if !Snippet.all.map(&:user_id).include?(logged_in_user.id)%>  <!-- Checks if the Snippet.all includes the current logged_in_user.id-->
-                  <%= "This user doesn't have any snippets" %>
+                <h2 class="noSnippetCat">
+                  <%= "You don't have any snippets" %>
+                </h2>
               <% else %>
                   <% Snippet.all.each do |s| %>                               <!-- Displays Snippets from Current User -->
                       <% if s.user_id == @user.id %>

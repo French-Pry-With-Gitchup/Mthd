@@ -208,7 +208,10 @@ nav {
   text-transform: uppercase;
 }
 
-// think about a border on the side?
+.noSnippetCat {
+  color: #66d9ef;
+  // text-transform: ;
+}
 
 .snippetLink {
   color: #f8f8f2;
@@ -252,7 +255,7 @@ nav {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 12vh);
+  // grid-template-columns: repeat(3, 12vh);
   justify-items: center;
   justify-content: space-around;
   grid-row-gap: 3vh;
@@ -316,7 +319,7 @@ nav {
   padding: 5px 0;
 }
 
-.user__editBtnContainer > input {
+.user__editBtnContainer > * {
   background-color: #A6E22E;
   height: 100%;
   width: 100%;
@@ -324,18 +327,8 @@ nav {
   text-transform: uppercase;
 }
 
-// .user__editBtnContainer > input:hover {
-//   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-//   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-//   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-// }
-
-
-// Handles User Edit Labels
-.edit_Labels {
-  color: White;
-}
-
-.edit_Labels:active{
-  color: silver;
+.edit_rd_button {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  line-height: 5vh;
 }

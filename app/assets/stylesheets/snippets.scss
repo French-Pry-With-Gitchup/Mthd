@@ -9,18 +9,18 @@ html {
   width: 100%;
 }
 
-#snippetContainer {
+.snippetContainer {
   background-color: #272822;
   height: 100vh;
   width: 100vw;
 }
 
-#snippetFormWrapper {
+.snippetFormWrapper {
   margin: 0 auto;
   width: 80vw;
 }
 
-#snippetSubmitBtn {
+.snippetSubmitBtn {
   height: 60px;
   width: 100%;
   line-height: 60px;
@@ -31,28 +31,39 @@ html {
   font-size: 20px;
   text-transform: uppercase;
   background-color: #66d9ef;
-
-  grid-area: st;
 }
 
-#snippetSubmitBtn:hover {
+.snippetReturnBtn {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #201D20;
+  border: 0;
+  margin-top: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #66d9ef;
+}
+
+.snippetSubmitBtn:hover {
   background-color: #a1efe4;
 }
 
-#upper {
+.upper {
   width: 85%;
   margin: 0 auto;
   position: relative;
   top: 4vh;
 }
 
-#lower {
+.lower {
   margin: 0 auto;
   padding-top: 7vh;
   background-color: #3e3d32;
 }
 
-#wpContainer {
+.wpContainer {
   display: flex;
 }
 
@@ -72,7 +83,7 @@ html {
   border: none;
 }
 
-#snippetTitle {
+.snippetTitle {
   font-family: "Coolvetica Regular";
   background-color: transparent;
   color: #f92672;
@@ -82,13 +93,13 @@ html {
   font-size: 25px;
 }
 
-#snippetTitle::placeholder {
+.snippetTitle::placeholder {
   color: #f92672;
   font-family: "Coolvetica Regular";
   text-transform: uppercase;
 }
 
-#snippetTextArea {
+.snippetTextArea {
   width: 100%;
   height: 55vh;
   background-color: transparent;
@@ -173,7 +184,7 @@ pre {
 
 
 // HANDLES SPECIALIZED BUTTONS FOR SNIPPETS
-#private_Radio_Label {
+.private_Radio_Label {
   height: 4em;
   width: 100%;
   color: #201D20;
@@ -184,7 +195,7 @@ pre {
   text-align: center;
   display: inline-block;
 }
-#private_Radio_Form{
+.private_Radio_Form{
   display: grid;
   grid-template-areas: "l r";
 }
@@ -195,7 +206,7 @@ pre {
 //   width: 0;
 // }
 
-#private_Radio_Form label {
+.private_Radio_Form label {
   background-color: #f92672;
   padding: 8px 15px;
   font-family: sans-serif, Arial;
@@ -203,17 +214,17 @@ pre {
 
 }
 
-#private_Radio_Form #left_button{
+.private_Radio_Form .left_button{
   background-color: #fd971f;
   grid-area: l;
 }
 
-#private_Radio_Form #right_button{
+.private_Radio_Form .right_button{
   background-color: #fd971f;
   grid-area: r;
 }
 
-#private_Radio_Form label:hover {
+.private_Radio_Form label:hover {
   background-color: #fd5ff0;
 }
 
@@ -228,15 +239,12 @@ pre {
 }
 
 // Handles Submit and Return organization
-#user_Submittals{
-  display: grid;
-  grid-template-areas: "st rn";
+.user_Submittals{
+  display: flex;
 }
 
-
-
 // Handles Return Button
-#returnBtn {
+.returnBtn {
   height: 60px;
   width: 100%;
   line-height: 60px;
@@ -252,6 +260,6 @@ pre {
   grid-area: rn;
 }
 
-#returnBtn:hover {
+.returnBtn:hover {
   background-color: #a1efe4;
 }
