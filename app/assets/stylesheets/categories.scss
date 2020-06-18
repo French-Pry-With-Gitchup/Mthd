@@ -1,3 +1,258 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// // Place all the styles related to the snippets controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: https://sass-lang.com/
+// // style for new
+
+html {
+    background-color: #272822;
+    height: 100%;
+    width: 100%;
+  }
+  
+  #snippetContainer {
+    background-color: #272822;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  #snippetFormWrapper {
+    margin: 0 auto;
+    width: 80vw;
+  }
+  
+  #snippetSubmitBtn {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    color: #201D20;
+    border: 0;
+    margin-top: 0;
+    font-family: "Coolvetica Regular";
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #66d9ef;
+  
+    grid-area: st;
+  }
+  
+  #snippetSubmitBtn:hover {
+    background-color: #a1efe4;
+  }
+  
+  #upper {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    top: 4vh;
+  }
+  
+  #lower {
+    margin: 0 auto;
+    padding-top: 7vh;
+    background-color: #3e3d32;
+  }
+  
+  #wpContainer {
+    display: flex;
+  }
+  
+  .wpBtn {
+    background-color: #a6e22e;
+    color: #000;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    width: 50%;
+    font-family: "Coolvetica Regular";
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+  
+  .snippetInput {
+    border: none;
+  }
+  
+  #snippetTitle {
+    font-family: "Coolvetica Regular";
+    background-color: transparent;
+    color: #f92672;
+    padding: 5px;
+    border-bottom: 3px solid #f92672;
+    height: 60px;
+    font-size: 25px;
+  }
+  
+  #snippetTitle::placeholder {
+    color: #f92672;
+    font-family: "Coolvetica Regular";
+    text-transform: uppercase;
+  }
+  
+  #snippetTextArea {
+    width: 100%;
+    height: 55vh;
+    background-color: transparent;
+    padding: 2em;
+    color: #fff;
+    resize: none;
+    scroll-behavior: smooth;
+  }
+  
+  .snippetInput:focus {
+    outline: none;
+  }
+  
+  // Snippet Show for each user
+  .view__snippetShow {
+    background-color: #272822;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .view__snippetContainer {
+    margin: 0 auto;
+    width: 80vw;
+    height: fit-content;
+  }
+  
+  .view__snippetHeaderContainer {
+    width: 85%;
+    height: fit-content;
+    padding: 10px 0;
+    margin: 0 auto;
+    position: relative;
+    text-transform: uppercase;
+    top: 4vh;
+    background-color: #66d9ef;
+  }
+  
+  pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .view__snippetBody {
+    margin: 0 auto;
+    padding-top: 7vh;
+    background-color: #3e3d32;
+    height: 70vh;
+    padding: 2.5em;
+    color: #fff;
+    overflow-y: scroll;
+    border-left: 4px solid #ae81ff;
+  }
+  
+  .view__snippetBtnContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .view__snippetBtnContainer > a {
+    width: 50%;
+  }
+  
+  .snippetEditBtn {
+    height: 60px;
+    line-height: 60px;
+    color: #201D20;
+    border: 0;
+    font-family: "Coolvetica Regular";
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #fd971f;
+    text-align: center;
+  }
+  
+  .snippetEditBtn:hover {
+    background-color: #f7d1a7;
+  }
+  
+  
+  // HANDLES SPECIALIZED BUTTONS FOR SNIPPETS
+  #private_Radio_Label {
+    height: 4em;
+    width: 100%;
+    color: #201D20;
+    font-family: "Coolvetica Regular";
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: #fd971f;
+    text-align: center;
+    display: inline-block;
+  }
+  #private_Radio_Form{
+    display: grid;
+    grid-template-areas: "l r";
+  }
+  
+  // #private_Radio_Form input[type="radio"]  {
+  //   opacity: 0;
+  //   position: fixed;
+  //   width: 0;
+  // }
+  
+  #private_Radio_Form label {
+    background-color: #f92672;
+    padding: 8px 15px;
+    font-family: sans-serif, Arial;
+    font-size: 10px;
+  
+  }
+  
+  #private_Radio_Form #left_button{
+    background-color: #fd971f;
+    grid-area: l;
+  }
+  
+  #private_Radio_Form #right_button{
+    background-color: #fd971f;
+    grid-area: r;
+  }
+  
+  #private_Radio_Form label:hover {
+    background-color: #fd5ff0;
+  }
+  
+  .private_radio_button input[type="radio"]:checked + label {
+    background-color:#bfb;
+    border-color: #4c4;
+  }
+  
+  .private_radio_button input[type="radio"]:active + label {
+    border: 2px dashed #444;
+    background-color: #fdf;
+  }
+  
+  // Handles Submit and Return organization
+  #user_Submittals{
+    display: grid;
+    grid-template-areas: "st rn";
+  }
+  
+  
+  
+  // Handles Return Button
+  #returnBtn {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    color: #201D20;
+    border: 0;
+    margin-top: 0;
+    font-family: "Coolvetica Regular";
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #66d9ef;
+    text-align: center;
+  
+    grid-area: rn;
+  }
+  
+  #returnBtn:hover {
+    background-color: #a1efe4;
+  }
+  

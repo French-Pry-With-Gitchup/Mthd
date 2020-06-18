@@ -1,19 +1,23 @@
 <div class="userDashboard">
   <nav>
-    <div class="navLink userLink">
-      <!-- would an image go here? if we implement that? -->
-      <!-- this isn't going to be a button, this'll have an image -->
-      <h2><%= @user.name %></h2>
-    </div>
     <% if logged_in? && logged_in_user.id == @user.id %>
         <%= link_to edit_user_path(@user), method: :get do %>
-          <div class="navLink userEdit">Account Settings</div>
+          <div class="navLink userLink"><h2><%= @user.name %>'s Account Settings</h2> </div>
+        <% end %>
+    <% end %>
+
+      <!-- would an image go here? if we implement that? -->
+      <!-- this isn't going to be a button, this'll have an image -->
+      
+    <% if logged_in? && logged_in_user.id == @user.id %>
+        <%= link_to new_category_path do %>
+          <div class="navLink userEdit"><h2> Create a Category </h2> </div>
         <% end %>
     <% end %>
 
       <% if logged_in? %>
           <%= link_to new_snippet_path do %>
-            <div class="navLink userSnippets">Create a Snippet</div>
+            <div class="navLink userSnippets"><h2>Create a Snippet </h2></div>
           <% end %>
       <% end %>
 
@@ -31,26 +35,28 @@
       <h1 class="snippetHeader">Categories</h1>
     </div>
     <section class="dashContent" id="showCategory">
-      <div class="categoryGrid">
-        <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
-            <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
+      <div class="snippetGridContainer">
+        <div class="snippetGridScroll">
+          <% if logged_in? && logged_in_user.id == @user.id %>                   <!-- Checks if the Current user is equal to the User page id -->
+              <% if !Category.all.map(&:user_id).include?(logged_in_user.id) %>  <!-- Checks if the Category.all includes the current logged_in_user.id-->
                 <%= "This User does not have any Categories" %>
-            <% else %>
-                <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
+              <% else %>
+                  <% Category.all.each do |c| %>                                     <!-- Displays Snippets from Current User Page -->
                     <% if c.user_id == @user.id %>
-                        <%= c.name %>        <br>
-                        <%= c.language %>    <br>
-                        <%= c.description %>
+                      <%= link_to categories_path(c.id) do %>
+                        <div class='snippetLink'><%= "#{c.name}" %></div>
+                      <% end %>
                     <% end %>
-                <% end %>
-            <% end %>
-        <% end %>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </div>
       </div>
     </section>
 
     <!-- Handle Current User Snippet Display -->
     <div class="headerContainer">
-      <h1 class="snippetHeader">Snippets</h1>
+      <h1 class="snippetHeader"> Snippets </h1>
     </div>
     <section class="dashContent" id="showSnippet">
       <div class="snippetGridContainer">

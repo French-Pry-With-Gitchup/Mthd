@@ -11,13 +11,14 @@ class UsersController < ApplicationController
         @user = User.new
         @errors = flash[:errors]
     end
-
+    
     # Controls the table creation logic
     def create
         @user = User.new(user_params)                       #   Creates a new user by grabbing the user parameters
         @user.save                                          #   Saves the User to the Database
 
         if @user.valid?                                     #   Checks if the User passes the Validation Checks
+            session[:user_id] = @user.id
             redirect_to user_path(@user.id)                 #   Redirects the user to the User Page after the creation is done
         else
             flash[:errors] = @user.errors.full_messages     #   If the user does not type in the right password then an Error pops up
@@ -40,14 +41,19 @@ class UsersController < ApplicationController
 
     # Handles deletion of USER Account
     def destroy
+        @user = User.find(params[:id])
         @user.destroy
-        redirect_to user_path
+        # redirect_to user_login_path
+        respond_to do |format|
+            format.html { redirect_to user_login_path notice: 'User was successfully deleted.' }
+        end
     end
 
     # Entry point for login View page
     def login_form
         @errors = flash[:errors]
     end
+    
 
     # Handles incoming data from Login form
     def handle_login                                        

@@ -4,14 +4,18 @@
     <div id="editFormSize">
         <%= form_for(@user) do |f| %>
           <%# how do you disable autofill? %>
+          <%= f.label :name, class:'edit_Labels'%>
           <%= f.text_field :name, class: 'edit_lineInput', placeholder: 'Enter a new username', autocomplete: 'off'%>
+          <%= f.label :password, class:'edit_Labels' %>
           <%= f.password_field :password, class: 'edit_lineInput', placeholder: 'Enter a new password'%>
-          <div class="user__editBtnContainer">
-            <%= f.submit "Edit", class:'btn'%>
-            <%= button_to "Delete Account", @user, method: :delete, class:'btn' %>
-          </div>
+          
+      <div class="user__editBtnContainer">
+          <%= f.submit "Edit", class:'btn'%>  
         <% end %>
 
+        <%= button_to "Delete Account", @user, method: :delete, data: {confirm: "Are you sure?"}, id:'edit_delete_button' %>
+        <%= button_to "Return" , user_path(logged_in_user.id), method: :get, id:'edit_return_button' %>
+      </div>
       <% if flash[:errors] %>
         <% flash[:errors].each do |error| %>
           <p style ="color: red"><%= error %></p>
