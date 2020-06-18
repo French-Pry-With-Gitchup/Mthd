@@ -22,15 +22,16 @@
         <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput', id:'snippetTextArea' %>
 
         <!-- Handles the Set to private functionality -->
-        <div id="private_Radio_Label"> <%= f.label "Is This Private?" %><br> 
+        <div id="private_Radio_Label">
+         <%= f.label "Is This Snippet Private?"%><br> 
           <div id="private_Radio_Form">
             <div id="left_button"> 
-              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button" %>
+              <%= f.label :is_private, "Yes", :value => "true", class:"private_radio_button", private_state_text: "Yes" %>
               <%= f.radio_button :is_private, true %>
             </div>
             <div id="right_button"> 
               <%= f.label :is_private, "No", :value => "false", class:"private_radio_button" %>
-              <%= f.radio_button :is_private, false, :checked => true %>
+              <%= f.radio_button :is_private, false, :checked => true, private_state_text: "No" %>
             </div>
           </div>
         </div>
