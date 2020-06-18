@@ -124,10 +124,14 @@ nav {
 }
 
 .dashContainer {
+  height: 100%;
   width: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
+  grid-template-areas: 
+  "t
+  b";
 }
 
 .btn {
@@ -343,3 +347,4 @@ nav {
   text-transform: uppercase;
   line-height: 5vh;
 }
+
