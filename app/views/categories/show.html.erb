@@ -1,0 +1,20 @@
+<section class="view__snippetShow">
+  <div class="view__snippetContainer">
+    <div class="view__snippetHeaderContainer">
+      <h1 class="view__snippetHeader"><%= @category.name %></h1>
+      <h1 class="view__snippetHeader" style="background-color: #a1efe4">Language - <%= @category.language %></h1>
+    </div>
+    <article class="view__snippetBody">
+      <p><%= markdown(@category.description) %></p>
+    </article>
+    <div class="view__snippetBtnContainer">
+      <%= link_to user_path(logged_in_user.id) do %>
+        <div id="returnBtn">Return</div>
+      <% end %>
+      <%= link_to edit_snippet_path(@category.id) do %>
+        <div class="snippetEditBtn">Edit</div>
+      <% end %>
+    </div><br><br>
+
+  </div>
+</section>

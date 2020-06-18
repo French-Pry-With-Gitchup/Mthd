@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   # resources :topics     # Only needed for database -+
   # =========== SNIPPETS ROUTES =========== 
   resources :snippets
-  post 'snippet/new', to: 'snippets#new'
 
   # =========== CATEGORIES ROUTES =========== 
-  # resources :categories # Not in use Yet
+  resources :categories # Not in use Yet
 
   # =========== USER ROUTES =========== 
   resources :users, only: %i[show create edit update destroy]      # Will build up each CRUD function as we develop it over time. 
