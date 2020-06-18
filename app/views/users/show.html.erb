@@ -13,21 +13,6 @@
         <% end %>
     <% end %>
 
-      <!-- would an image go here? if we implement that? -->
-      <!-- this isn't going to be a button, this'll have an image -->
-
-    <% if logged_in? && logged_in_user.id == @user.id %>
-
-          <div class="navLink userEdit">Account Settings </div>
-
-    <% end %>
-
-      <% if logged_in? %>
-          <%= link_to new_snippet_path do %>
-            <div class="navLink userSnippets">Create a Snippet</div>
-          <% end %>
-      <% end %>
-
       <!-- If user is not logged in forces login else displays Logout button -->
       <% if logged_in? %>
           <%= link_to user_logout_path do %>
