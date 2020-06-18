@@ -12,7 +12,8 @@
         <!-- Shows Write Page -->
         <div id="snippet_Category_Select">
           <%# Select a Category %>
-          <%= f.collection_select :title, Category.all, :id, :name, :prompt => 'Select One' %>
+          <%= f.collection_select :category_ids, Category.all, :id, :name, :prompt => 'Select a Category' %>
+          
         </div> <%# If the user clicks this button then display the code area ..::PERSIST  %>
 
       </div>

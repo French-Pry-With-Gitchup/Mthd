@@ -3,9 +3,6 @@
     <div class="upper">
     <%= form_for @snippet do |f| %>
       <%= f.text_field :title, placeholder: 'Title', class:'snippetInput snippetTitle' %>
-      <div class="wpContainer">
-  <h1 class="view__snippetHeader" style="background-color: #a1efe4">Language - <%= @category.language %></h1>
-      </div>
     </div>
     <div class="lower">
       <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput snippetTextArea' %>
