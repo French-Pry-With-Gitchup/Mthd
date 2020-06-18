@@ -94,12 +94,7 @@ a {
 }
 
 .userDashboard  {
-  // background-color: #3e3d32;
-  background-color: #25283D;
-  // background-image: asset-url('code-snippet.svg');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
+  background-color: #A6E22E;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -109,11 +104,15 @@ a {
 // bc nav shows up here!
 nav {
   display: flex;
+  background-color: #2E2F2F;
   flex-direction: column;
   align-content: stretch;
   justify-content: space-around;
-  width: 20vw;
-  padding: 0 0 0 3vw;
+  width: 25vw;
+  padding: 0 1vw 0;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 
 .dashContainer {
@@ -130,8 +129,8 @@ nav {
 }
 
 .navLink {
-  height: 18vh;
-  line-height: 25vh;
+  height: 15vh;
+  line-height: 15vh;
   border-radius: 10px;
 }
 
@@ -161,10 +160,13 @@ nav {
 }
 
 .dashContent {
-  background-color: #2E2F2F;
+  background-color: #333;
+  // background-image: asset-url('code-snippet.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
   width: 90%;
   margin: 0 auto;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
@@ -178,9 +180,9 @@ nav {
   margin: 0 auto;
   position: relative;
   top: 50px;
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(174,129,255,0.5);
 }
 
 .snippetHeader {
@@ -192,43 +194,38 @@ nav {
 // think about a border on the side?
 
 .snippetLink {
-  color: #201D20;
-  background-color: #A6E22E;
-  font-family: "Helvetica";
-  // height: fit-content;
-  height: 10vh;
-  // how do you get them to respond to the length of text, and then by display grid?
-  width: 15vw;
+  color: #333;
+  background-color: #f92672;
+  font-family: "Coolvetica Regular";
+  font-style: italic;
+  height: 5vh;
+  border-radius: 10px;
+  margin: 0 auto 2vh;
+  line-height: 5vh;
+  width: 90%;
   text-align: center;
   font-size: 1.2em;
   padding: .75em 0;
-  // overflow-y: scroll;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  // go for a bolded italic font here!
 }
 
 .snippetLink:hover {
-  transform: scale(1.025);
+  transform: scale(1.015);
   transition: 0.3s ease-in-out;
-  // color: #ae81ff;
-  // background-color: #201D20;
 }
 
 // could've used ids for here, to be dry
-.snippetGrid {
+.snippetGridContainer {
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 12vw);
-  justify-items: center;
-  justify-content: space-around;
-  // height: 40vh;
-  grid-row-gap: 25px;
   padding: 10vh 0 5vh;
-  justify-content: space-around;
+  height: 45vh;
 }
+
+.snippetGridScroll {
+  overflow-y: scroll;
+  height: 100%;
+}
+
 
 .categoryGrid {
   width: 100%;
@@ -269,14 +266,17 @@ nav {
 #editFormSize {
   width: 25vw;
   margin: 0 auto;
+  height: 60%;
 }
 
 .edit_lineInput {
   background-color: transparent;
   border: none;
+  color: rgb(166, 226, 46);
   border-bottom: 3px solid rgba(166, 226, 46, 0.5);
   margin: 15px 0;
   padding: 5px;
+  height: 3vh;
 }
 
 .edit_lineInput:focus {
@@ -288,3 +288,23 @@ nav {
   font-family: "Coolvetica Regular";
   text-transform: uppercase;
 }
+
+.user__editBtnContainer {
+  height: 5vh;
+  display: flex;
+  padding: 5px 0;
+}
+
+.user__editBtnContainer > input {
+  background-color: #A6E22E;
+  height: 100%;
+  width: 50%;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+// .user__editBtnContainer > input:hover {
+//   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+//   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+//   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+// }

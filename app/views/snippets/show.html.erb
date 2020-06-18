@@ -6,8 +6,14 @@
     <article class="view__snippetBody">
       <p><%= markdown(@snippet.code) %></p>
     </article>
-    <%= link_to user_path(logged_in_user.id) do %>
-      <div id="snippetEditBtn">Return</div>
-    <% end %>
+    <div class="view__snippetBtnContainer">
+      <%= link_to user_path(logged_in_user.id) do %>
+        <div class="snippetEditBtn">Return</div>
+      <% end %>
+      <%= link_to edit_snippet_path(@snippet.id) do %>
+        <div class="snippetEditBtn">Edit</div>
+      <% end %>
+    </div>
+
   </div>
 </section>
