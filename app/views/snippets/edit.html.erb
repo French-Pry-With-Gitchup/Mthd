@@ -1,0 +1,20 @@
+<div class="snippetContainer">
+  <div class="snippetFormWrapper">
+    <div class="upper">
+    <%= form_for @snippet do |f| %>
+      <%= f.text_field :title, placeholder: 'Title', class:'snippetInput snippetTitle' %>
+    </div>
+    <div class="lower">
+      <%= f.text_area :code, placeholder: 'Add your notes here', class:'snippetInput snippetTextArea' %>
+
+        <div class="private_Radio_Form">
+          <%= f.radio_button :is_private, true %>
+          <%= f.label :is_private, "Private", :value => "true", class:"private_radio_button" %>
+          <%= f.radio_button :is_private, false, :checked => true %>
+          <%= f.label :is_private, "Public", :value => "false", class:"private_radio_button" %>
+        </div>
+        <%= f.submit 'Update', class:'snippetSubmitBtn' %>
+    <% end %>
+  </div>
+  </div>
+</div>

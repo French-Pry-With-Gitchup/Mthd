@@ -1,0 +1,20 @@
+<section class="view__snippetShow">
+  <div class="view__snippetContainer">
+    <div class="view__snippetHeaderContainer">
+      <h1 class="view__snippetHeader"><%= @snippet.title %></h1>
+
+    </div>
+    <article class="view__snippetBody">
+      <p><%= markdown(@snippet.code) %></p>
+    </article>
+    <div class="view__snippetBtnContainer">
+      <%= link_to edit_snippet_path(@snippet.id) do %>
+        <div class="snippetEditBtn"">Edit</div>
+      <% end %>
+      <%= link_to user_path(logged_in_user.id) do %>
+        <div class="snippetReturnBtn">Return</div>
+      <% end %>
+    </div><br><br>
+
+  </div>
+</section>

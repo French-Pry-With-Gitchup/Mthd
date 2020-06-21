@@ -1,0 +1,31 @@
+<div class="catContainer">
+  <div class="catFormWrapper">
+    <%# do we add a logo here? %>
+    <div class="upper">
+    <%= form_for @category do |f| %>
+      <%= f.text_field :name, placeholder: 'Category Name', class:'catInput', id:'catName' %>
+      <div class="catWrapper">
+        <%= f.text_field :language, placeholder: 'Language', class:'catInput', id:'catLanguage' %>
+      </div>
+    </div>
+
+      <div class="lower">
+        <!-- Handles Code Text -->
+        <%= f.text_area :description, placeholder: 'Add a short description of the category here', class:'snippetInput catTextArea' %>
+
+        <div class="cat_Submittals">
+          <%= f.submit 'Submit', class:'catSubmitBtn' %>
+          <%= link_to user_path(logged_in_user.id) do %>
+            <div class="catReturnBtn">Return</div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p style ="color: red"><%= error %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

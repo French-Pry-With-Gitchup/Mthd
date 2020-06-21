@@ -1,0 +1,355 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.signupContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f2;
+}
+
+.userForm {
+  width: 50vw;
+  height: fit-content;
+  margin: 0 auto;
+  transform: translate(0, 30vh);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formSize {
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.formHeader {
+  text-transform: uppercase;
+}
+
+.lineInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(32, 29, 32, 0.5);
+  margin: 15px 0;
+  padding: 5px;
+}
+
+.lineInput:focus {
+  outline: none;
+  border-bottom: 2px solid rgba(32, 29, 32, 1);
+}
+
+.lineInput::placeholder {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+// add input on focus here, make that the full opacity
+// also animation of bottom border expanding!!! o dear this so cool
+
+.codeGraphic {
+  width: 50vw;
+  background-color: #201D20;
+  background-image: url('code-snippet.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userBtn {
+  background-color: #A6E22E;
+  color: #201D20;
+  border: 0;
+  font-family: "Coolvetica Regular";
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 60px;
+  margin: 2vh 0;
+  line-height: 60px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+  box-shadow: 0px 0px 8px 0px rgba(62, 61, 50,0.35);
+}
+
+.userRedirectPrompt {
+  color: #F92672;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#signUpBtn:hover {
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+  -moz-box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+  box-shadow: 0px 0px 13px 0px rgba(62, 61, 50,0.35);
+}
+
+.userDashboard  {
+  background-color: #A6E22E;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+// ok so this breaks the snippet page
+// bc nav shows up here!
+nav {
+  display: flex;
+  background-color: #2E2F2F;
+  flex-direction: column;
+  align-content: stretch;
+  // justify-content: space-between;
+  width: 20vw;
+  padding: 3vh 2vw 0;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+#navLogo {
+  height: 90px;
+  width: 100%;
+  margin: 1vh auto;
+  background-image: url('nav-logo.svg');
+  background-size: cover;
+}
+
+.dashContainer {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  grid-template-areas:
+  "t
+  b";
+}
+
+.btn {
+  background: none;
+  background-color: none;
+  outline: none;
+  border: none;
+}
+
+.navLink {
+  height: 10vh;
+  line-height: 10vh;
+  color: #f8f8f2;
+  font-family: "Coolvetica Regular";
+  text-align: center;
+  text-transform: uppercase;
+  // padding: 5px 0;
+  margin: 5px 0;
+  // border-radius: 10px;
+}
+
+.navLink:hover {
+  transform: scale(1.025);
+  transition: 0.3s ease-in-out;
+}
+
+.userLink {
+  border-left: 5px solid #f92672;
+  background-color: #404040;
+  // background-color: #f92672;
+  // background-image: linear-gradient(to right top, #f92672, #ff2c8f, #ff39af, #ff4bcf, #fd5ff0);
+}
+
+.userLogin {
+  border-left: 5px solid #66d9ef;
+  background-color: #404040;
+  // background-color: #66d9ef;
+  // background-image: linear-gradient(to left bottom, #ae81ff, #71a2ff, #31baff, #30ccff, #66d9ef);
+}
+
+.userEdit {
+  border-left: 5px solid #A6E22E;
+  background-color: #404040;
+  // background-color: #A6E22E;
+  // background-image: linear-gradient(to left top, #a1efe4, #82f1cc, #79efa5, #88eb72, #a6e22e);
+}
+
+.userSnippets {
+  border-left: 5px solid #fd971f;
+  background-color: #404040;
+  // background-color: #fd971f;
+  // background-image: linear-gradient(to right bottom, #e6db74, #eacc5b, #f0bc44, #f6aa30, #fd971f);
+}
+
+.dashContent {
+  background-color: #333;
+  width: 90%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+.headerContainer {
+  // border: 1px solid red;
+  padding: 5px 0;
+  background-color: #404040;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  border-bottom: 5px solid #66d9ef;
+}
+
+.snippetHeader {
+  font-family: "Coolvetica Regular";
+  color: #66d9ef;
+  text-transform: uppercase;
+}
+
+.noSnippetCat {
+  color: #66d9ef;
+  // text-transform: ;
+}
+
+.snippetLink {
+  color: #f8f8f2;
+  // background-color: #f92672;
+  background-color: #404040;
+  border-left: 5px solid #f92672;
+  font-family: "Coolvetica Regular";
+  height: 5vh;
+  text-transform: uppercase;
+  margin: 0 auto 2vh;
+  line-height: 5vh;
+  width: 90%;
+  text-align: center;
+  font-size: 1.2em;
+  padding: .75em 0;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
+  box-shadow: 0px 0px 15px 0px rgba(51,51,51,0.55);
+}
+
+.snippetLink:hover {
+  transform: scale(1.015);
+  transition: 0.3s ease-in-out;
+}
+
+// could've used ids for here, to be dry
+.snippetGridContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10vh 0 5vh;
+  height: 25vh;
+}
+
+.snippetGridScroll {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.categoryContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10vh 0 5vh;
+  height: 25vh;
+}
+
+.categoryScroll {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.categoryGrid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  // grid-template-columns: repeat(3, 12vh);
+  justify-items: center;
+  justify-content: space-around;
+  grid-row-gap: 3vh;
+  padding: 10vh 0 5vh;
+}
+
+#userEditContainer {
+  background-color: #A6E22E;
+  height: 100vh;
+  width: 100vw;
+}
+
+#userEdit {
+  background-color: #2E2F2F;
+  padding: 10vh 0 0;
+  // border: 1px solid red;
+  width: 35vw;
+  margin: 0 auto;
+  position: relative;
+  top: 25vh;
+  height: 45vh;
+  // border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+#userEdit > h1 {
+  color: #fff;
+}
+
+#editFormSize {
+  width: 25vw;
+  margin: 0 auto;
+  height: 60%;
+}
+
+.edit_lineInput {
+  background-color: transparent;
+  border: none;
+  color: rgb(166, 226, 46);
+  border-bottom: 3px solid rgba(166, 226, 46, 0.5);
+  margin: 15px 0;
+  padding: 5px;
+  height: 3vh;
+}
+
+.edit_lineInput:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(166, 226, 46, 1);
+}
+
+.edit_lineInput::placeholder {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+.user__editBtnContainer {
+  height: 5vh;
+  display: flex;
+  padding: 5px 0;
+}
+
+.user__editBtnContainer > * {
+  background-color: #A6E22E;
+  height: 100%;
+  width: 100%;
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+}
+
+.edit_rd_button {
+  font-family: "Coolvetica Regular";
+  text-transform: uppercase;
+  line-height: 5vh;
+}
+
+.edit_rd_button:hover {
+  background-color: #333;
+  color: #A6E22E;
+  transition: 0.2s ease-in-out;
+}

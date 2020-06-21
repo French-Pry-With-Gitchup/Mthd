@@ -1,0 +1,26 @@
+<div id="userEditContainer">
+  <section id="userEdit">
+    <h1 class="formHeader">Edit Your Account Details</h1>
+    <div id="editFormSize">
+        <%= form_for(@user) do |f| %>
+          <%# how do you disable autofill? %>
+          <%= f.text_field :name, class: 'edit_lineInput', placeholder: 'Enter a new username', autocomplete: 'off'%>
+          <%= f.password_field :password, class: 'edit_lineInput', placeholder: 'Enter a new password'%>
+          <div class="user__editBtnContainer">
+            <%= f.submit "Update", class:'btn edit_rd_button'%>
+
+        <% end %>
+
+        <%= button_to "Delete", @user, method: :delete, data: {confirm: "Are you sure?"}, class:'btn edit_rd_button'%>
+        <%= button_to "Return" , user_path(logged_in_user.id), method: :get, class:'btn edit_rd_button'%>
+          </div>
+          <!-- end user edit btn container -->
+      </div>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p style ="color: red"><%= error %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+</div>

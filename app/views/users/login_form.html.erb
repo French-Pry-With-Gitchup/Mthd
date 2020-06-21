@@ -1,0 +1,18 @@
+<div class="signupContainer">
+  <section class="userForm">
+    <div class="logo"></div>
+    <h1 class="formHeader">Login</h1>
+    <div class="formSize">
+      <%= form_tag "/user/login", method: "POST" do %>
+          <%= text_field_tag :name, "", class: 'lineInput', placeholder: 'Name'%>
+          <%= password_field_tag :password, "", class:'lineInput', placeholder:'Password'%>
+          <%= submit_tag "Log In", class:'userBtn'%>
+      <% end %>
+      <p class="userRedirectPrompt">New here? <%= link_to "Signup.", sign_up_path %></p>
+      <% if flash[:errors] %>
+          <p style ="color: red"><%= flash[:errors]%></p>
+      <% end %>
+    </div>
+  </section>
+  <section class="codeGraphic"></section>
+</div>
